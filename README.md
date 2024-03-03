@@ -19,7 +19,7 @@ sudo nixos-rebuild switch
 
 Add the following line to `/etc/nixos/configuration.nix` and install git
 
-```json
+```nix
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
 
@@ -33,7 +33,7 @@ nix flake init -t templates#full
 
 For example
 
-```json
+```nix
 {
   description = "A simple NixOS flake";
 
@@ -72,7 +72,7 @@ NixOS only manages system-level configuration, to manage user-level configuratio
 
 Now create `/etc/nixos/home.nix`, this in an example configuration
 
-```json
+```nix
 { config, pkgs, ... }:
 
 {
@@ -241,7 +241,7 @@ Replace flake.nix with this
 nix flake new example -t github:nix-community/home-manager#nixos
 ```
 
-```json
+```nix
 {
   description = "NixOS configuration";
 
@@ -307,7 +307,7 @@ When I'm taking packages from a nix channel (either stable, unstable or upstream
 # Create a new module
 Create a file such as `main-user.nix`
 Then add It into the `configuration.nix` file
-```json
+```nix
 imports = [
 	./hardware-configuration.nix
 	./main-user.nix
