@@ -90,6 +90,7 @@
       firefox
       python3
       neofetch
+
     ];
   };
 
@@ -103,6 +104,7 @@
   #  wget
     obsidian
     git
+    ranger
   ];
 
   # Enable the flakes feature and the accompanying new nix command-line tool
