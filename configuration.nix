@@ -112,7 +112,6 @@
     btop         # System monitor
     bat          # Better cat
     tldr         # Simpler man
-    atuin        # Better history
     zip
     gnutar
     neofetch
