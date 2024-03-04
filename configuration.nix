@@ -87,9 +87,7 @@
     description = "santo";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
       python3
-      neofetch
 
     ];
   };
@@ -100,11 +98,25 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    
+    # Applications
     obsidian
+    firefox
+
+    # Developement
     git
-    ranger
+    
+    # Utilities / Misc
+    neovim       # The best text editor
+    ranger       # Visual file manager
+    btop         # System monitor
+    bat          # Better cat
+    tldr         # Simpler man
+    atuin        # Better history
+    zip
+    gnutar
+    neofetch
+
   ];
 
   # Enable the flakes feature and the accompanying new nix command-line tool
