@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
+let 
+  	github-access-token = builtins.readFile "/home/santo/.config/nixos/.secret/github-access-token";
+in
 {
+	home.file.".git-credentials".text = ''
+https://San7o:${github-access-token}@github.com
+  	'';
+
   home.username = "santo";
   home.homeDirectory = "/home/santo";
 
@@ -37,17 +44,29 @@
     glow # markdown previewer in terminal
 
     # git accees control
-    git-credential-manager
-
+    # git-credential-manager
+    
+    # Networking
+    curl
   ];
 
   # basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    userName = "San7o";
-    userEmail = "santigio2003@gmail.com";
+  # programs.git = {
+  #   enable = true;
+  #   userName = "San7o";
+  #   userEmail = "santigio2003@gmail.com";
+  # };
 
-  };
+  home.file.".gitconfig".text = ''
+    [user]
+        name = San7o
+        email = santigio2003@gmail.com
+  
+    [credential]
+ 	helper = store
+  '';
+
+
 
   # Github access token
   # access-tokens = github.com=/home/santo/.config/nixos/.secret/github-access-token;
