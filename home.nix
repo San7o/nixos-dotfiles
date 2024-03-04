@@ -36,6 +36,9 @@
     # productivity
     glow # markdown previewer in terminal
 
+    # git accees control
+    git-credential-manager
+
   ];
 
   # basic configuration of git, please change to your own
@@ -47,7 +50,7 @@
   };
 
   # Github access token
-  access-tokens = github.com=${config.home.homeDirectory}/.config/nixos/.secret/github-access-token;
+  # access-tokens = github.com=/home/santo/.config/nixos/.secret/github-access-token;
 
   # alacritty - a cross-platform, GPU-accelerated terminal emulator
   programs.alacritty = {
