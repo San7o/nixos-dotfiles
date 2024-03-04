@@ -1,5 +1,19 @@
+# nixos-config
 
 My NixOS configuration files
+
+Run with
+```bash
+sudo nixos-rebuild switch --flake . --impure
+```
+impure lets you read gihub credentials from .secrets
+
+Add `.secrets` with the following file
+`.secrets/github-access-token`
+```
+https://username:token@github.com
+```
+Make sure there is no new line after the line (`0x0a`)
 
 ---
 
