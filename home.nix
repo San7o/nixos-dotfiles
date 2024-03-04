@@ -43,7 +43,11 @@
     enable = true;
     userName = "San7o";
     userEmail = "santigio2003@gmail.com";
+
   };
+
+  # Github access token
+  access-tokens = github.com=${config.home.homeDirectory}/.config/nixos/.secret/github-access-token;
 
   # alacritty - a cross-platform, GPU-accelerated terminal emulator
   programs.alacritty = {
