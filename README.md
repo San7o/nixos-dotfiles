@@ -2,34 +2,59 @@
 
 My NixOS configuration files
 
-Run with
+A good guide on NixOs can be found [here](https://nixos-and-flakes.thiscute.world/introduction/).
+
+## Use my config files
+
+Add `.secrets/` directory with the following file
+
+`.secrets/github-access-token`
+```
+https://username:token@github.com
+```
+Make sure there is no new line in the file (`0x0a`)
+
+
+Build the system with with
 ```bash
 sudo nixos-rebuild switch --flake . --impure
 ```
 impure lets you read gihub credentials from .secrets
 
-Add `.secrets` with the following file
-`.secrets/github-access-token`
+I personally don't place my config in `/etc/nixos/` but I have this repo on my home inside `.config/nixos`
+
+## Structure
+
 ```
-https://username:token@github.com
+|-- flake.lock              # To lock all packages version
+|-- flake.nix               # Main flake config, It imports all the rest
+|-- home/                   # Home-manager config, config for users
+|  |-- default.nix          # Main home-manager config
+|  |-- dev/                 # Developement stuff
+|  |-- programs/            # Misc programs
+|-- hosts/                  # Directory containing hardware configurations
+|-- modules/                # System level modules
 ```
-Make sure there is no new line after the line (`0x0a`)
 
 ---
 
-# Edit the config
+# Notes
+
+Here are some key notes I took when learning about NixOS
+
+## Edit the config
 
 ```bash
 sudoedit /etc/nixos/configuration.nix
 ```
 
-# Rebuild the system
+## Rebuild the system
 
 ```bash
 sudo nixos-rebuild switch
 ```
 
-# Enable Flakes
+## Enable Flakes
 
 Add the following line to `/etc/nixos/configuration.nix` and install git
 
@@ -319,6 +344,7 @@ sudo nix-collect-garbage --delete-other-than 15d
 When I'm taking packages from a nix channel (either stable, unstable or upstream) and I share my config file to some one else, that person might use a different channel and the scripts might fail. This is where flakes come into play.
 
 # Create a new module
+
 Create a file such as `main-user.nix`
 Then add It into the `configuration.nix` file
 ```nix
@@ -328,13 +354,26 @@ imports = [
 ]
 ```
 
+In `main-user.nix`
+```nix
+{ whatever, ... }:
+
+{
+   # Config here
+}
+```
+
+### Default
+If you call a file `default.nix`, you can access It just bu importing It's folder
+
+
 # Finding options and functions
 
 ```bash
 nix search nixpkgs <searchterm>
 ```
 
-# Risorse
+# Rerources
 ## Videos
 https://www.youtube.com/watch?v=CwfKlX3rA6E
 

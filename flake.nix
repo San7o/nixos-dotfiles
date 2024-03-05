@@ -30,7 +30,7 @@
             home-manager.useUserPackages = true;
 
             # Your username
-            home-manager.users.santo = import ./home.nix;
+            home-manager.users.santo = import ./home;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }

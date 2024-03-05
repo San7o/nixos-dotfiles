@@ -1,15 +1,15 @@
 { config, pkgs, ... }:
 
-let 
-  	github-access-token = builtins.readFile "/home/santo/.config/nixos/.secret/github-access-token";
-in
 {
-  home.file.".git-credentials".text = ''
-https://San7o:${github-access-token}@github.com
-  '';
 
   home.username = "santo";
   home.homeDirectory = "/home/santo";
+
+  imports = [
+    ./dev
+    ./programs
+    ./shells
+  ];
 
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -32,6 +32,7 @@ https://San7o:${github-access-token}@github.com
   #  "Xft.dpi" = 172;
   #};
 
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # nix related
@@ -46,51 +47,6 @@ https://San7o:${github-access-token}@github.com
     # Networking
     curl
   ];
-
-  home.file.".gitconfig".text = ''
-    [user]
-        name = San7o
-        email = santigio2003@gmail.com
-  
-    [credential]
- 	helper = store
-  '';
-
-
-
-  # Github access token
-  # access-tokens = github.com=/home/santo/.config/nixos/.secret/github-access-token;
-
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
-  programs.alacritty = {
-    enable = true;
-    # custom settings
-    settings = {
-      env.TERM = "xterm-256color";
-      font = {
-        size = 12;
-        draw_bold_text_with_bright_colors = true;
-      };
-      scrolling.multiplier = 5;
-      selection.save_to_clipboard = true;
-    };
-  };
-
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-    # TODO add your cusotm bashrc here
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-    '';
-
-    # set some aliases, feel free to add more or remove some
-    shellAliases = {
-      k = "kubectl";
-      urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
-      urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
-    };
-  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
