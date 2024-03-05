@@ -54,6 +54,11 @@ sudoedit /etc/nixos/configuration.nix
 sudo nixos-rebuild switch
 ```
 
+## Upgrade the system
+```bash
+nix flake update
+```
+
 ## Enable Flakes
 
 Add the following line to `/etc/nixos/configuration.nix` and install git
