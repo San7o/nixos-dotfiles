@@ -36,6 +36,11 @@ I personally don't place my config in `/etc/nixos/` but I have this repo on my h
 |-- modules/                # System level modules
 ```
 
+## Run a FHS shell
+```bash
+nix-shell /path/to//.config/nixos/modules/fhs.nix
+```
+
 ---
 
 # Notes

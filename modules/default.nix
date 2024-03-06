@@ -4,7 +4,8 @@
 
   imports = [
     # Enable FSH environment whrough the fsh command
-    ./fhs.nix
+    # You can guild a fhs shell with nix-shell fhs.nix
+    # ./fhs.nix
 
     # Enable memory optimization
     ./memory-optimization.nix
