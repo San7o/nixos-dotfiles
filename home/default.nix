@@ -44,8 +44,6 @@
     # productivity
     glow # markdown previewer in terminal
 
-    # Networking
-    curl
   ];
 
   # This value determines the home Manager release that your

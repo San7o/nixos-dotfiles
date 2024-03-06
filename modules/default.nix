@@ -1,6 +1,21 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
+
+  imports = [
+    # Enable FSH environment whrough the fsh command
+    ./fhs.nix
+
+    # Enable memory optimization
+    ./memory-optimization.nix
+
+    # Set up users
+    ./users.nix
+
+    # Setup a custom community cache server
+    # ./cache-server.nix
+  ];
+
   # PACKAGES ------------------------------------------------
 
   # List packages installed in system profile. To search, run:
@@ -12,9 +27,13 @@
 
     # Developement
     git
+    ltrace
+    strace
 
-    # Utilities / Misc
+    # Text Editor
     neovim       # The best text editor
+    
+    # Utilities / Misc
     ranger       # Visual file manager
     btop         # System monitor
     bat          # Better cat
@@ -22,6 +41,10 @@
     zip
     gnutar
     neofetch
+
+    # Networking
+    wget
+    curl
 
   ];
 

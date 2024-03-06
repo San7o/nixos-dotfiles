@@ -18,41 +18,6 @@
 	./modules
     ];
 
-  # ------------------------- Custom Cache Server -----------------------------
-  #
-  # Nix provides an official cache server, https://cache.nixos.org,
-  # which caches build results for all packages in nixpkgs under commonly
-  # used CPU architectures. When you execute Nix build commands locally,
-  # if Nix finds a corresponding cache on the server, it directly
-  # downloads the cached file, skipping the time-consuming local build
-  # process and significantly improving build speed.
-  #
-  /*
-  nix.settings = {
-    # given the users in this list the right to specify additional substituters via:
-    #    1. `nixConfig.substituters` in `flake.nix`
-    #    2. command line args `--options substituters http://xxx`
-    trusted-users = ["santo"];
-
-    substituters = [
-      # cache mirror located in China
-      # status: https://mirror.sjtu.edu.cn/
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
-      # status: https://mirrors.ustc.edu.cn/status/
-      # "https://mirrors.ustc.edu.cn/nix-channels/store"
-
-      "https://cache.nixos.org"
-    ];
-
-    trusted-public-keys = [
-      # the default public key of cache.nixos.org, it's built-in, no need to add it here
-      # "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    ];
-  };
-  */
-  # ---------------------------------------------------------------------
-
-
 
   # --------------------------- Set-up the system --------------------------
 
@@ -142,24 +107,6 @@
   # services.xserver.libinput.enable = true;
 
 
-  # -----------------------------------------------------------------------
-
-
-  
-  # ------------------------------ Users ---------------------------------
-
-  
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.santo = {
-    isNormalUser = true;
-    description = "santo";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      python3
-
-    ];
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -203,29 +150,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
-  
-  # -------------------------- Memory Optimization -------------------------
-
-
-  # Limit the number of generations to keep
-  boot.loader.systemd-boot.configurationLimit = 10;
-  # boot.loader.grub.configurationLimit = 10;
-
-
-  # Perform garbage collection weekly to maintain low disk usage
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 1w";
-  };
-
-
-  # Optimize storage
-  # You can also manually optimize the store via:
-  #    nix-store --optimise
-  # Refer to the following link for more details:
-  # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
-  nix.settings.auto-optimise-store = true;
 
 }
