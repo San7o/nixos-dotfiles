@@ -22,32 +22,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-
-    # Applications
-    firefox
-
-    # Developement
-    git
-    ltrace       # debug programs
-    strace       # debug programs
-
-    # Text Editor
-    neovim       # The best text editor
-    
-    # Utilities / Misc
-    ranger       # Visual file manager
-    btop         # System monitor
-    bat          # Better cat
-    tldr         # Simpler man
-    zip
-    gnutar
-    neofetch     # ofc
-    ripgrep      # the cooler grep
-
-    # Networking
-    wget
-    curl
+      # Put all system packages here
   ];
+
+
 
   # Obsidian needs electron, wich is considered insecure
   nixpkgs.config.permittedInsecurePackages = [

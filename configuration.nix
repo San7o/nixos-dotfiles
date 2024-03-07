@@ -122,13 +122,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
-  # NEOVIM ------------------------
-  # todo move this
-  # Set default editor to neovim
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
-
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

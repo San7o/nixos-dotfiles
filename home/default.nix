@@ -40,10 +40,30 @@
     # it provides the command `nom` works just like `nix`
     # with more details log output
     nix-output-monitor
+    home-manager
 
-    # productivity
-    glow # markdown previewer in terminal
+    # Applications
+    firefox
 
+    # Developement
+    git
+    ltrace       # debug programs
+    strace       # debug programs
+
+    # Utilities / Misc
+    ranger       # Visual file manager
+    btop         # System monitor
+    glow         # markdown previewer in terminal
+    bat          # Better cat
+    tldr         # Simpler man
+    zip
+    gnutar
+    neofetch     # ofc
+    ripgrep      # the cooler grep
+
+    # Networking
+    wget
+    curl
   ];
 
   # This value determines the home Manager release that your
