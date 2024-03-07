@@ -7,8 +7,7 @@
     description = "santo";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      python3
-
+       # Define packages here
     ];
   };
 

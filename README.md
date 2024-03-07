@@ -38,7 +38,7 @@ I personally don't place my config in `/etc/nixos/` but I have this repo on my h
 
 ## Run a FHS shell
 ```bash
-nix-shell /path/to//.config/nixos/modules/fhs.nix
+nix-shell /path/to/.config/nixos/modules/fhs.nix
 ```
 
 # nix-shell
@@ -57,6 +57,7 @@ See `modules/shell/shell.nix` for more information.
 Example usage
 ```bash
 nix-shell -p gcc
+nix-shell /path/to/shell/configuration.nix
 ```
 ---
 
