@@ -41,6 +41,23 @@ I personally don't place my config in `/etc/nixos/` but I have this repo on my h
 nix-shell /path/to//.config/nixos/modules/fhs.nix
 ```
 
+# nix-shell
+For developement consistency, NixOS uses (enforces...) the use of nix-shell (or `nix develop` for flake configuration). You can create a developement environment and enter it with the command `nix-shell`. You can provide the packages with `-p` or use a configuration file called `shell.nix` like so:
+```nix
+{ pkgs ? import <nixpkgs> {} }: pkgs.mkShell {
+  nativeBuildInputs = with pkgs.buildPackages; [
+    libgcc
+    # cargo
+    # rustc
+  ];
+}
+```
+See `modules/shell/shell.nix` for more information.
+
+Example usage
+```bash
+nix-shell -p gcc
+```
 ---
 
 # Notes
@@ -347,7 +364,7 @@ In order to use git, I copied all the content from `/etc/nixos/*` to `.config` i
 ## Remove Garbage
 Remove system versions and packages no longer used by new generations by 15 days
 ```bash
-sudo nix-collect-garbage --delete-other-than 15d
+sudo nix-collect-garbage --delete-older-than 15d
 ```
 
 ## Update Packages

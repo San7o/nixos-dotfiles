@@ -30,6 +30,7 @@
     git
     ltrace
     strace
+    apacheHttpd
 
     # Text Editor
     neovim       # The best text editor
@@ -46,7 +47,6 @@
     # Networking
     wget
     curl
-
   ];
 
   # Obsidian needs electron, wich is considered insecure
