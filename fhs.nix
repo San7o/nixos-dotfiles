@@ -1,5 +1,5 @@
 # CAREFUL
-# This is very sperimental, I don't know how reliable Is this
+# I don't know how reliable Is this
 { pkgs ? import <nixpkgs> {} }:
 
 (pkgs.buildFHSEnv {
@@ -13,8 +13,12 @@
     libXrandr
   ]);
   multiPkgs = pkgs: (with pkgs; [
+    # Import packages here
     udev
     alsa-lib
+    libgcc   
+    zlib             # Many applications require libz.so.1
+    appimage-run     # To run appimages
   ]);
   runScript = "bash";
 }).env

@@ -28,9 +28,8 @@
 
     # Developement
     git
-    ltrace
-    strace
-    apacheHttpd
+    ltrace       # debug programs
+    strace       # debug programs
 
     # Text Editor
     neovim       # The best text editor
@@ -42,7 +41,8 @@
     tldr         # Simpler man
     zip
     gnutar
-    neofetch
+    neofetch     # ofc
+    ripgrep      # the cooler grep
 
     # Networking
     wget

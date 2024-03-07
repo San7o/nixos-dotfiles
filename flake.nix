@@ -1,5 +1,8 @@
 {
+  
   description = "NixOS configuration";
+
+  # Most of the stuff here is to configure home-manager
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
