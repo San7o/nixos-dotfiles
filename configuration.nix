@@ -1,4 +1,4 @@
-# --------------------------- configuration.nix ------------------------------
+# --------------------------- configuration.nix ----------------------------- #
 #
 # The main configuration file of NixOs
 #
@@ -22,7 +22,7 @@
     ];
 
 
-  # --------------------------- Set-up the system --------------------------
+  # --------------------------- Set-up the system -------------------------- #
 
 
   # Bootloader.
@@ -66,6 +66,8 @@
   };
 
 
+  # ------------------------- DESKTOP ENVIRONMENT ------------------------- #
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -73,6 +75,22 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+  # Enable KDE Plasma
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
+
+  # Enable Pantheon Desktop
+  # services.xserver.desktopManager.pantheon.enable = true;
+
+  # Enable MATE Desktop
+  # services.xserver.desktopManager.mate.enable = true;
+
+  # Enable Cinnamon Desktop
+  # services.xserver.desktopManager.cinnamon.enable = true;
+
+  # Enable Deepin Desktop
+  # services.xserver.desktopManager.deepin.enable = true;
 
 
   # Configure keymap in X11
@@ -116,7 +134,7 @@
   nixpkgs.config.allowUnfree = true;
 
 
-  # FLAKES ----------------------------------------------------------------
+  # FLAKES -------------------------------------------------------------- #
   #
   # Enable the flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
