@@ -42,7 +42,7 @@ nix-shell /path/to/.config/nixos/modules/fhs.nix
 ```
 
 # nix-shell
-For developement consistency, NixOS uses (enforces...) the use of nix-shell (or `nix develop` for flake configuration). You can create a developement environment and enter it with the command `nix-shell`. You can provide the packages with `-p` or use a configuration file called `shell.nix` like so:
+For developement consistency, NixOS uses (enforces...) the use of nix-shell (or `nix develop` for flake configuration). You can create and enter into developement environment it with the command `nix-shell`. You can provide the packages with `-p` or use a configuration file by the name `shell.nix` like so:
 ```nix
 { pkgs ? import <nixpkgs> {} }: pkgs.mkShell {
   nativeBuildInputs = with pkgs.buildPackages; [
@@ -58,7 +58,10 @@ Example usage
 ```bash
 nix-shell -p gcc
 nix-shell /path/to/shell/configuration.nix
+nix develop nixpkgs#gcc
 ```
+With `nix develop` you mantain in scope all your user programs
+
 ---
 
 # Notes
