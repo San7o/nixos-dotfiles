@@ -113,6 +113,10 @@
         i3lock         # default i3 screen locker
         i3blocks       # if you are planning on using i3blocks over i3status
      ];
+     
+     # Thanks to https://github.com/MayNiklas
+     extraSessionCommands = "feh --bg-fill ~/.config/nixos/wallpapers/free-as-in-freedom.jpeg";
+    
     };
   };
 

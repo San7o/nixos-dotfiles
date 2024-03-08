@@ -36,12 +36,8 @@ I personally don't place my config in `/etc/nixos/` but I have this repo on my h
 |-- modules/                # System level modules
 ```
 
-## Run a FHS shell
-```bash
-nix-shell modules/fhs.nix
-```
-
 # nix-shell
+
 For developement consistency, NixOS uses (enforces...) the use of nix-shell (or `nix develop` for flake configuration). You can create and enter into developement environment it with the command `nix-shell`. You can provide the packages with `-p` or use a configuration file like so:
 `modules/shell/shell.nix`
 ```nix
@@ -62,6 +58,12 @@ nix-shell /path/to/shell/configuration.nix
 nix develop nixpkgs#gcc
 ```
 With `nix develop` you mantain in scope all your user programs
+
+## Run a FHS shell
+```bash
+nix-shell modules/fhs.nix
+```
+
 
 ## Run Appimage
 ```bash

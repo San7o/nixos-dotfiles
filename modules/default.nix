@@ -24,6 +24,7 @@
   environment.systemPackages = with pkgs; [
       # Put all system packages here
       # home-manager
+      feh        # to set background
   ];
 
 
