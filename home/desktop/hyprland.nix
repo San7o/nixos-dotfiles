@@ -16,7 +16,7 @@
 #
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
-monitor=,preferred,auto,auto
+monitor=,highres,auto,1
 
 
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
@@ -137,7 +137,7 @@ bind = $mainMod, Q, killactive,
 bind = $mainMod, M, exit, 
 bind = $mainMod, E, exec, dolphin
 bind = $mainMod, V, togglefloating, 
-bind = $mainMod, D, exec, wofi --show drun
+bind = $mainMod, D, exec, rofi -combi-modi window,drun,ssh -theme solarized -font "hack 10" -show combi -icon-theme "Papirus" -show-icons
 bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, J, togglesplit, # dwindle
 
@@ -158,6 +158,12 @@ bind = $mainMod, 7, workspace, 7
 bind = $mainMod, 8, workspace, 8
 bind = $mainMod, 9, workspace, 9
 bind = $mainMod, 0, workspace, 10
+
+# Move windows with arrowkeys + SHIFT
+bind = $mainMod  SHIFT, left, movewindow, l
+bind = $mainMod  SHIFT, right, movewindow, r
+bind = $mainMod  SHIFT, up, movewindow, u
+bind = $mainMod  SHIFT, down, movewindow, d
 
 # Move active window to a workspace with mainMod + SHIFT + [0-9]
 bind = $mainMod SHIFT, 1, movetoworkspace, 1
@@ -182,6 +188,18 @@ bind = $mainMod, mouse_up, workspace, e-1
 # Move/resize windows with mainMod + LMB/RMB and dragging
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
+
+# Use pactl to adjust volume in PulseAudio.
+binde =, XF86AudioRaiseVolume, exec, amixer -D pipewire sset Master 10%+
+binde =, XF86AudioLowerVolume, exec, amixer -D pipewire sset Master 10%-
+binde =, XF86AudioMute, exec, amixer -D pipewire sset Master toggle
+binde =, XF86AudioMicMute, exec, amixer -D pipewire sset Master toggle
+
+# Fullscreen
+bind = SUPER, F, fullscreen,
+
+# Waybar
+exec-once = waybar 
 
 '';
   };

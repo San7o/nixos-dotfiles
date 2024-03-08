@@ -15,6 +15,9 @@
 
     # Setup a custom community cache server
     # ./cache-server.nix
+
+    # Nvidia configuration
+    ./nvidia.nix
   ];
 
   # PACKAGES ------------------------------------------------
@@ -24,8 +27,9 @@
   environment.systemPackages = with pkgs; [
       # Put all system packages here
       # home-manager
-      feh        # to set background
-      kitty      # i need this to access HyprLand for the first time
+      # feh        # to set background
+      kitty        # Wayland terminal 
+
   ];
 
 

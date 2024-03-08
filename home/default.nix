@@ -67,6 +67,13 @@
     # Networking
     wget
     curl
+
+    # Wayland specific
+    waybar        # Simple bar, configured with json and css
+    dunst         # Notification manager
+    libnotify     # Dependency of dunst
+    rofi-wayland  # Wailand compatible rofi
+
   ];
 
   # This value determines the home Manager release that your
