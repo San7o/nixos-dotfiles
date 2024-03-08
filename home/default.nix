@@ -40,10 +40,12 @@
     # it provides the command `nom` works just like `nix`
     # with more details log output
     nix-output-monitor
-    home-manager
+    # home-manager   # It should be installed from the flakes
 
     # Applications
     firefox
+    zoom-us
+    discord
 
     # Developement
     git
@@ -78,4 +80,5 @@
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
+
 }

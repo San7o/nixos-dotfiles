@@ -2,8 +2,6 @@
   
   description = "NixOS configuration";
 
-  # Most of the stuff here is to configure home-manager
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     # home-manager, used for managing user configuration
@@ -18,8 +16,12 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
+
+
+    # System configuration
+    #
     nixosConfigurations = {
-      # Ypur hostname
+      # Your hostname
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -32,13 +34,28 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            # Your username
+            # Set home-manager for the user santo
             home-manager.users.santo = import ./home;
-
+            
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
+
         ];
       };
+
+      # home-manager
+      #
+      # Standalone home-manager configuration entrypoint
+      # Available through 'home-manager <command> --flake .#username@hostname'
+      homeConfigurations = {
+        "santo@nixos" =
+            home-manager.lib.homeManagerConfiguration {
+              pkgs = nixpkgs.legacyPackages."x86_64-linux";
+              modules = [ import ./home-manager ];
+            };
+        };
+
     };
+
   };
 }
