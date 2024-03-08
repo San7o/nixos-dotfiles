@@ -23,7 +23,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
       # Put all system packages here
-      home-manager
+      # home-manager
   ];
 
 

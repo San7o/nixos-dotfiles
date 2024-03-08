@@ -17,7 +17,6 @@
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
 
-
     # System configuration
     #
     nixosConfigurations = {
@@ -43,6 +42,8 @@
         ];
       };
 
+    };
+/*
       # home-manager
       #
       # Standalone home-manager configuration entrypoint
@@ -51,11 +52,9 @@
         "santo@nixos" =
             home-manager.lib.homeManagerConfiguration {
               pkgs = nixpkgs.legacyPackages."x86_64-linux";
-              modules = [ import ./home-manager ];
+              modules = [ ./home-manager ];
             };
         };
-
-    };
-
+*/
   };
 }
