@@ -32,8 +32,10 @@ I personally don't place my config in `/etc/nixos/` but I have this repo on my h
 |  |-- default.nix          # Main home-manager config
 |  |-- dev/                 # Developement stuff
 |  |-- programs/            # Misc programs
+|  |-- shells/              # Config for shells
 |-- hosts/                  # Directory containing hardware configurations
-|-- modules/                # System level modules
+|-- modules/                # System level packages
+|-- wallpapers/             # Some wallpapers
 ```
 
 # nix-shell
