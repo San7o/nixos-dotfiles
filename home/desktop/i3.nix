@@ -20,6 +20,13 @@ set $mod Mod4
 default_border pixel 0
 default_floating_border pixel 0
 
+# Berders
+default_border pixel 3
+default_floating_border pixel 3
+
+# Colors
+client.focused  #fcba03 #fcba03 #fcba03 #fcba03 #fcba03
+
 # Gaps!
 gaps inner 12
 
@@ -51,10 +58,10 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pipewire sset Master 10%+ && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pipewire sset Master 10%- && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id amixer -D pipewire sset Master toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id amixer -D pipewire sset Master toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -199,12 +206,13 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Set wallpaper background
-exec_always --no-startup-id feh --bg-fill /home/santo/.config/nixos/wallpapers/free-as-in-freedom.jpeg
+exec_always --no-startup-id feh --bg-fill /home/santo/.config/nixos/wallpapers/nixos-dark.png
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
+	position top
 }
 
   '';
