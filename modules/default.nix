@@ -25,6 +25,7 @@
       # Put all system packages here
       # home-manager
       feh        # to set background
+      kitty      # i need this to access HyprLand for the first time
   ];
 
 

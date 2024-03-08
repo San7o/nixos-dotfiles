@@ -8,6 +8,16 @@
 
 { lib, config, pkgs, ... }:
 
+let
+
+  # Needed for hyprland
+  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+
+  hyprland-flake = (import flake-compat {
+    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
+  }).defaultNix;
+
+in
 {
   # This is how you import modules
   # At each module, we are passing all the environment as arguments
@@ -69,7 +79,17 @@
   # ------------------------- DESKTOP ENVIRONMENT ------------------------- #
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+ /*
+  services.xserver.enable = true;
+
+  # Configure keymap in X11
+  services.xserver = {
+    layout = "it";
+    xkbVariant = "";
+  };
+*/
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
 
 
   # Enable the GNOME Desktop Environment.
@@ -92,7 +112,11 @@
   # Enable Deepin Desktop
   # services.xserver.desktopManager.deepin.enable = true;
 
+  # Enable sway
+  # programs.sway.enable = true;
+
   # Enable i3
+  /*
   services.xserver = {
     enable = true;
 
@@ -116,12 +140,50 @@
 
     };
   };
+  */
 
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "it";
-    xkbVariant = "";
+  # Enable hyperland
+  # First you can enable the cache server so that you don't have to compile the source again
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
+  # Trying different stuff
+  # services.xserver.displayManager.sddm = {
+  #  enable = true;
+  # wayland.enable = true;
+  #};
+  programs.hyprland = {
+    # Install the packages from nixpkgs
+    enable = true;
+    # Whether to enable XWayland, a compatibility layer over wayland for apps that don't supìport wayland yet
+    xwayland.enable = true;
+    # package = hyprland-flake.packages.${pkgs.system}.hyprland;
+  };
+
+  # Enable opengl
+  hardware.opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+  };
+
+  # Load nvidia driver for xorg and wayland
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+      # Required
+      modesetting.enable = true;
+
+      # Nvidia power management, still experimental and unstable
+      powerManagement.enable = false;
+      # Turns off GPU when not used
+      powerManagement.finegrained = false;
+
+      # Access the nvidia settings menu via nvidia-settings
+      nvidiaSettings = true;
+
   };
 
 
@@ -149,11 +211,6 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
