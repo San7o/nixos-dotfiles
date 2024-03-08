@@ -6,9 +6,10 @@
   home.homeDirectory = "/home/santo";
 
   imports = [
-    ./dev
-    ./programs
-    ./shells
+    ./dev           # Programs for developement
+    ./programs      # Various applications
+    ./shells        # Config for some shells
+    ./desktop       # Config for desktop / window managers
   ];
 
   # link the configuration file in current directory to the specified location in home directory
@@ -79,6 +80,6 @@
   home.stateVersion = "23.11";
 
   # Let home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  # programs.home-manager.enable = true;
 
 }
