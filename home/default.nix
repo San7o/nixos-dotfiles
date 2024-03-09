@@ -55,7 +55,6 @@
 
     # Utilities / Misc
     ranger       # Visual file manager
-    btop         # System monitor
     glow         # markdown previewer in terminal
     bat          # Better cat
     tldr         # Simpler man
@@ -64,6 +63,15 @@
     neofetch     # ofc
     ripgrep      # the cooler grep
 
+    # System administration
+    powertop     # see power statistics on intel-based laptops
+                 # run a calibration with "powertop --calibrate"
+		 # It will take 5-10 minutes
+		 # then let It run for an hour and get power
+		 # estimation figures
+    tree         # list files and folder in a tree structure
+    btop         # System monitor
+    
     # Networking
     wget
     curl

@@ -24,9 +24,14 @@ wallpaper = eDP-1,~/.config/nixos/wallpapers/nixos-dark.png
 #enable splash text rendering over the wallpaper
 splash = true
 
-#fully disable ipc
-# ipc = off
+#fully disable ipc, if on it might lead to worse battery life
+ipc = off
 
 '';
   };
+  
+  # To list monitors run
+  # hyprctl monitors
+  # To set a wallpaper on another monitor, run
+  # hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/nixos/wallpapers/nixos-dark.png"
 }

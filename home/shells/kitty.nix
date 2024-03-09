@@ -23,16 +23,17 @@ direct_urls yes
 
 # Define a color table
 # Cool palette https://coolors.co/palette/6f1d1b-bb9457-432818-99582a-ffe6a7
-foreground #FFE6A7
-background #432818
+foreground #EFDECD
+background #1f1511
 
 # Opacity, Be aware that using a value
 # less than 1.0 is a (possibly significant)
 # performance hit
-background_opacity 0.6
+# background_opacity 0.6
+background_opacity 1
 
 # Blur, too much will lead to performance problems
-background_blur 10
+# background_blur 10
 
 # Path to a background image. Must be in PNG format.
 background_image none

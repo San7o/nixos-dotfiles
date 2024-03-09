@@ -66,16 +66,17 @@ decoration {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
     rounding = 10
-    
+
+    # Disabled blur and drop_shadow to save battery life
     blur {
-        enabled = true
-        size = 3
-        passes = 1
+        enabled = false
+        # size = 3
+        # passes = 1
     }
 
-    drop_shadow = yes
-    shadow_range = 4
-    shadow_render_power = 3
+    drop_shadow = false
+    # shadow_range = 4
+    # shadow_render_power = 3
     col.shadow = rgba(1a1a1aee)
 }
 
