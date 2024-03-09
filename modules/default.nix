@@ -27,8 +27,9 @@
   environment.systemPackages = with pkgs; [
       # Put all system packages here
       # home-manager
-      # feh        # to set background
+      feh          # to set background
       kitty        # Wayland terminal 
+      hyprpaper    # wallpaper engine for hyprland
 
   ];
 

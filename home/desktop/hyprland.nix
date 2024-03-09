@@ -137,7 +137,7 @@ bind = $mainMod, Q, killactive,
 bind = $mainMod, M, exit, 
 bind = $mainMod, E, exec, dolphin
 bind = $mainMod, V, togglefloating, 
-bind = $mainMod, D, exec, rofi -combi-modi window,drun,ssh -theme solarized -font "hack 10" -show combi -icon-theme "Papirus" -show-icons
+bind = $mainMod, D, exec, rofi -combi-modi window,drun,ssh -theme gruvbox-dark-soft -font "hack 10" -show combi -icon-theme "Papirus" -show-icons
 bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, J, togglesplit, # dwindle
 
@@ -200,6 +200,9 @@ bind = SUPER, F, fullscreen,
 
 # Waybar
 exec-once = waybar 
+
+# Background
+exec = hyprpaper
 
 '';
   };
