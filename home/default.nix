@@ -82,6 +82,9 @@
     libnotify     # Dependency of dunst
     rofi-wayland  # Wailand compatible rofi
 
+    # Visual
+    nerdfonts
+
   ];
 
   # This value determines the home Manager release that your
