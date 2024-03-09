@@ -158,3 +158,11 @@ https://www.youtube.com/watch?v=1ED9b7ERTzI
 https://search.nixos.org/options?channel=23.11&from=0&size=50&sort=relevance&type=packages&query=git
 
 https://search.nixos.org/packages?channel=23.11&show=git&from=0&size=50&sort=relevance&type=packages&query=git
+
+---
+
+# TODO
+
+- [ ] Login Manager
+- [ ] Shutdown GUI
+- [ ] Color Overall

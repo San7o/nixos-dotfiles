@@ -24,7 +24,7 @@ direct_urls yes
 # Define a color table
 # Cool palette https://coolors.co/palette/6f1d1b-bb9457-432818-99582a-ffe6a7
 foreground #EFDECD
-background #1f1511
+background #282828
 
 # Opacity, Be aware that using a value
 # less than 1.0 is a (possibly significant)

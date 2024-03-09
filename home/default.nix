@@ -62,6 +62,7 @@
     gnutar
     neofetch     # ofc
     ripgrep      # the cooler grep
+    xfce.thunar  # file manager
 
     # System administration
     powertop     # see power statistics on intel-based laptops

@@ -13,6 +13,10 @@
 # For a full list, see the wiki
 #
 
+# Disable splash text
+misc {
+   disable_splash_rendering = true
+}
 # See https://wiki.hyprland.org/Configuring/Monitors/
 monitor=,highres,auto,1
 

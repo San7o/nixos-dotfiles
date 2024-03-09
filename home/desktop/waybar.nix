@@ -49,7 +49,6 @@
         "format": "{}% "
     },
     "battery": {
-        "bat": "BAT0",
         "states": {
             // "good": 95,
             "warning": 30,
