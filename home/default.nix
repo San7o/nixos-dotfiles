@@ -71,7 +71,8 @@
 		 # estimation figures
     tree         # list files and folder in a tree structure
     btop         # System monitor
-    
+    ncdu         # Analyze disk usage
+
     # Networking
     wget
     curl
