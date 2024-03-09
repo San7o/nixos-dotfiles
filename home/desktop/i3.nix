@@ -206,7 +206,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Set wallpaper background
-exec_always --no-startup-id feh --bg-fill /home/santo/.config/nixos/wallpapers/nixos-dark.png
+exec_always --no-startup-id feh --bg-fill ~/.config/nixos/wallpapers/nixos-dark.png
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

@@ -2,8 +2,6 @@
 
 {
 
-  # From the initial i3 config
-
   home.file.".config/hypr/hyprpaper.conf" = {
     
     # Overwrite the file
