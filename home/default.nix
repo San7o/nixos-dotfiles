@@ -87,6 +87,10 @@
     # Visual
     nerdfonts
 
+    # Virtualisation
+    docker
+    docker-compose
+
   ];
 
   # This value determines the home Manager release that your
