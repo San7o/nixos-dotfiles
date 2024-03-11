@@ -30,10 +30,14 @@
       feh          # to set background
       kitty        # Wayland terminal 
       hyprpaper    # wallpaper engine for hyprland
-
+      
+      # Virtualisation
+      docker
+      docker-compose
   ];
 
-
+  # Enable docker
+  virtualisation.docker.enable = true;
 
   # Obsidian needs electron, wich is considered insecure
   nixpkgs.config.permittedInsecurePackages = [
