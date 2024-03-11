@@ -52,6 +52,7 @@
     git
     ltrace       # debug programs
     strace       # debug programs
+    python3
 
     # Utilities / Misc
     ranger       # Visual file manager
