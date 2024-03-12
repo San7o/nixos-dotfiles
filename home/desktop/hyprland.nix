@@ -193,8 +193,8 @@ bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
 # Use pactl to adjust volume in PulseAudio.
-binde =, XF86AudioRaiseVolume, exec, amixer -D pipewire sset Master 10%+
-binde =, XF86AudioLowerVolume, exec, amixer -D pipewire sset Master 10%-
+binde =, XF86AudioRaiseVolume, exec, amixer -D pipewire sset Master 5%+
+binde =, XF86AudioLowerVolume, exec, amixer -D pipewire sset Master 5%-
 binde =, XF86AudioMute, exec, amixer -D pipewire sset Master toggle
 binde =, XF86AudioMicMute, exec, amixer -D pipewire sset Master toggle
 
@@ -205,8 +205,8 @@ bind = SUPER, F, fullscreen,
 bind = , Print, exec, grim -g "$(slurp -d)" - | wl-copy
 
 # Backlight control
-bind = , XF86MonBrightnessUp, exec, brightnessctl -d smc::kbd_backlight s +10
-bind = , XF86MonBrightnessDown, exec, brightnessctl -d smc::kbd_backlight s 10-
+bind = , XF86MonBrightnessUp, exec, brightnessctl s +5%
+bind = , XF86MonBrightnessDown, exec, brightnessctl s 5%-
 
 # Waybar
 exec-once = waybar 
