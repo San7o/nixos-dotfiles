@@ -47,6 +47,7 @@
     firefox
     zoom-us
     discord
+    telegram-desktop
 
     # Developement
     git
@@ -64,6 +65,7 @@
     neofetch     # ofc
     ripgrep      # the cooler grep
     xfce.thunar  # file manager
+    thunderbird  # popular mail client
 
     # System administration
     powertop     # see power statistics on intel-based laptops

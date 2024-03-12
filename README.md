@@ -114,7 +114,12 @@ nix flake update
 ## Remove Garbage
 Remove system versions and packages no longer used by new generations by 15 days
 ```bash
-sudo nix-collect-garbage --delete-older-than 15d
+nix-channel --update
+sudo nix-channel --update
+sudo rm /nix/var/nix/gcroots/auto/*
+nix-collect-garbage -d
+sudo nix-collect-garbage -d
+sudo nix-store --optimize
 ```
 ## Create a new module
 
@@ -166,3 +171,4 @@ https://search.nixos.org/packages?channel=23.11&show=git&from=0&size=50&sort=rel
 - [ ] Login Manager
 - [ ] Shutdown GUI
 - [ ] Color Overall
+- [ ] Fix Plug installation
