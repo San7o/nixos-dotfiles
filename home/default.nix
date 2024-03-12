@@ -78,12 +78,16 @@
     # Networking
     wget
     curl
+    wireshark
 
     # Wayland specific
     waybar        # Simple bar, configured with json and css
     dunst         # Notification manager
     libnotify     # Dependency of dunst
     rofi-wayland  # Wailand compatible rofi
+    grim          # Take screenshot
+    slurp         # Select a region
+    wl-clipboard  # Save on clipboard from terminal
 
     # Visual
     nerdfonts

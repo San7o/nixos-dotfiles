@@ -201,6 +201,9 @@ binde =, XF86AudioMicMute, exec, amixer -D pipewire sset Master toggle
 # Fullscreen
 bind = SUPER, F, fullscreen,
 
+# Take screenshot
+bind = , Print, exec, grim -g "$(slurp -d)" - | wl-copy
+
 # Waybar
 exec-once = waybar 
 
