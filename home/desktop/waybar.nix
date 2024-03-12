@@ -15,7 +15,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/mode", "custom/spotify"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock"],
+    "modules-right": ["backlight", "pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock"],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
@@ -87,6 +87,11 @@
         "interval": 30, // Remove this if your script is endless and write in loop
         "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
         "exec-if": "pgrep spotify"
+    },
+    "backlight": {
+  	"device": "intel_backlight",
+  	"format": "{percent}% {icon}",
+  	"format-icons": ["", ""]
     }
 }
 
@@ -200,6 +205,9 @@ window#waybar {
 }
 
 #tray {
+}
+
+#backlight {
 }
 
   '';
