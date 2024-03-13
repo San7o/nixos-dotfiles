@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.santo = {
     isNormalUser = true;
     description = "santo";
@@ -11,6 +10,14 @@
     ];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # light-santo
+  users.users.lanto = {
+    isNormalUser = true;
+    description = "light-santo";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+       # Define packages here
+    ];
+  };
+
 }
