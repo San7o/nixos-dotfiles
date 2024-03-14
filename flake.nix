@@ -29,7 +29,7 @@
           ./configuration.nix
 
 	  # Hardware configuration
-          ./hosts/hp-laptop
+          ./hosts/acer-laptop
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
@@ -54,7 +54,7 @@
 	  # System Configuration
           ./configuration.nix
 
-          ./hosts/acer-laptop
+          ./hosts/hp-laptop
           
 	  home-manager.nixosModules.home-manager
           {

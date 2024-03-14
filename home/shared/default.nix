@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
     imports = [
@@ -6,4 +6,9 @@
        ./dev
        ./shells
     ];
+
+    home.packages = with pkgs; [
+	nerdfonts
+    ];
+
 }

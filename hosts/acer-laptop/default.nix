@@ -1,4 +1,6 @@
-{}:
+{ ... }:
 {
-
+   imports = [
+       ./hardware-configuration.nix
+   ];
 }

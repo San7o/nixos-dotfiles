@@ -17,7 +17,7 @@
     ./nvidia.nix
 
     # Setup network manager configs for unitn-x and eduroam
-    ./network-manager.nix
+    # ./network-manager.nix
   ];
 
   # PACKAGES ------------------------------------------------
@@ -57,8 +57,9 @@
     ripgrep       # the cooler grep
     xfce.thunar   # file manager
     thunderbird   # popular mail client
-    feh           # to set background
+    # feh           # to set background
     tree          # list files and folder in a tree structure
+    brightnessctl # manage brightness
 
     # Virtualisation
     docker
@@ -80,9 +81,9 @@
     wl-clipboard  # Save on clipboard from terminal
     kitty         # Wayland terminal 
     hyprpaper     # wallpaper engine for hyprland
- 
+    wl-gammactl   # anage screen gamma and contrast
+
     # Visual
-    nerdfonts
 
   ];
 

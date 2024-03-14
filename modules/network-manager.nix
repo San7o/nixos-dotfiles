@@ -2,54 +2,25 @@
 
 {
   
-    environment.etc.NetworkManager = {
-        system-connections = [
-	    "eduroam.nmconnection".text = ''
+    environment.etc."/NetworkManager/system-connections/eduroam.nmconnection" = {
+        mode = "0600";
+	text = ''
+
 [connection]
 id=eduroam
-uuid=345c015a-792e-4b98-b30d-6ea2540e2977
+uuid=b65807cf-a33f-4e92-b802-acbe0872f55a
 type=wifi
-interface-name=wlo1
+interface-name=wlp4s0
 
 [wifi]
 mode=infrastructure
 ssid=eduroam
 
 [wifi-security]
-auth-alg=open
 key-mgmt=wpa-eap
 
 [802-1x]
-eap=peap;
-identity=giovanni.santini@unitn.it
-password=
-phase2-auth=mschapv2
-
-[ipv4]
-method=auto
-
-[ipv6]
-addr-gen-mode=default
-method=auto
-
-[proxy]
-	    '',
-
-	    "unitn-x.nmconnection".text = ''
-[connection]
-id=unitn-x
-uuid=4fcb164b-b754-40e7-99ae-0ca1fbce7e18
-type=wifi
-interface-name=wlo1
-
-[wifi]
-mode=infrastructure
-ssid=unitn-x
-
-[wifi-security]
-key-mgmt=wpa-eap
-
-[802-1x]
+anonymous-identity=giovanni.santini@unitn.it
 domain-suffix-match=unitn.it
 eap=peap;
 identity=giovanni.santini@unitn.it
@@ -64,8 +35,43 @@ addr-gen-mode=default
 method=auto
 
 [proxy]
-	    ''
-	    ];
-	};
+ 
+
+    '';
+};
+    environment.etc."/NetworkManager/system-connections/unitn-x.nmconnection" = {
+
+        mode = "0600";
+    	text = ''
+[connection]
+id=unitn-x
+uuid=b65807cf-a33f-4e92-b802-acbe0872f55a
+type=wifi
+interface-name=wlp4s0
+
+[wifi]
+mode=infrastructure
+ssid=unitn-x
+
+[wifi-security]
+key-mgmt=wpa-eap
+
+[802-1x]
+anonymous-identity=giovanni.santini@unitn.it
+domain-suffix-match=unitn.it
+eap=peap;
+identity=giovanni.santini@unitn.it
+password=
+phase2-auth=mschapv2
+
+[ipv4]
+method=auto
+
+[ipv6]
+addr-gen-mode=default
+method=auto
+
+[proxy]
+    '';
     };
 }

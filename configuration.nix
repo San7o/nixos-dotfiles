@@ -160,7 +160,7 @@ in
   };
 
   # Enable sddm for wayland
-  services.xserver.displayManager.sddm.wayland.enable = true;
+  #services.xserver.displayManager.sddm.wayland.enable = true;
 
   # Configure console keymap
   console.keyMap = "it2";
