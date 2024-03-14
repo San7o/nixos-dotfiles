@@ -15,6 +15,9 @@
 
     # Nvidia configuration
     ./nvidia.nix
+
+    # Setup network manager configs for unitn-x and eduroam
+    ./network-manager.nix
   ];
 
   # PACKAGES ------------------------------------------------
@@ -55,17 +58,7 @@
     xfce.thunar   # file manager
     thunderbird   # popular mail client
     feh           # to set background
-
-    # System administration
-    powertop      # see power statistics on intel-based laptops
-                  # run a calibration with "powertop --calibrate"
-		  # It will take 5-10 minutes
-		  # then let It run for an hour and get power
-		  # estimation figures
     tree          # list files and folder in a tree structure
-    btop          # System monitor
-    ncdu          # Analyze disk usage
-    brightnessctl # Brightness manager
 
     # Virtualisation
     docker
