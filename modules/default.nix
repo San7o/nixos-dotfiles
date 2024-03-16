@@ -52,6 +52,7 @@
     bat           # Better cat
     tldr          # Simpler man
     zip
+    unzip
     gnutar
     neofetch      # ofc
     ripgrep       # the cooler grep
