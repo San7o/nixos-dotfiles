@@ -2,37 +2,24 @@
 
 
 {
-	
-  home.packages = with pkgs; [
-      neovim      # The best text editor
-  ];
-
+  programs.neovim.enable = true;
 
   # Set default editor to neovim
+  # - apparently this deas not work
   programs.neovim.defaultEditor = true;
+  home.sessionVariables.EDITOR = "nvim";
 
-  home.file.".local/share/nvim/site/autoload/plug.vim" = {
-	force = true;
-	text = builtins.readFile ./plug.vim;
-  };
+  # Install plugins
+  # Search for them here
+  # https://search.nixos.org/packages?from=0&size=50&sort=relevance&type=packages&query=vimPlugins
+  # https://github.com/m15a/nixpkgs-vim-extra-plugins
+  # https://github.com/NixNeovim/NixNeovimPlugins
 
+  programs.neovim.plugins = with pkgs.vimPlugins; [
+    nvim-tree-lua
+    vim-startify
+    nerdtree
+  ];
 
-
-  home.file.".config/nvim/init.lua" = {
-	force = true;
-	text = ''
-
-local vim = vim
-local Plug = vim.fn['plug#']
-
-vim.call('plug#begin')
-
--- Neovim Tree
-Plug('nvim-tree/nvim-tree.lua')
-
-vim.call('plug#end')
-
-	'';
-  };
 
 }

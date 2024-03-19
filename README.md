@@ -187,4 +187,3 @@ https://search.nixos.org/packages?channel=23.11&show=git&from=0&size=50&sort=rel
 - [ ] Login Manager
 - [ ] Shutdown GUI
 - [ ] Color Overall
-- [ ] Fix Plug installation
