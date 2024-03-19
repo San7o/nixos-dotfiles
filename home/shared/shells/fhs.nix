@@ -1,5 +1,4 @@
-# CAREFUL
-# I don't know how reliable Is this
+# Nor properly tested
 { pkgs ? import <nixpkgs> {} }:
 
 (pkgs.buildFHSEnv {

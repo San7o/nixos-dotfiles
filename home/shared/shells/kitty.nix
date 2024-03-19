@@ -38,6 +38,8 @@ background_opacity 1
 # Path to a background image. Must be in PNG format.
 background_image none
 
+# Set nvim as default editor
+editor nvim
 
 # kitten themes
 

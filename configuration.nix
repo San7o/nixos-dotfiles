@@ -146,12 +146,8 @@ in
     substituters = ["https://hyprland.cachix.org"];
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
-  # Trying different stuff
-  # services.xserver.displayManager.sddm = {
-  #  enable = true;
-  # wayland.enable = true;
-  #};
-  programs.hyprland = {
+ 
+ programs.hyprland = {
     # Install the packages from nixpkgs
     enable = true;
     # Whether to enable XWayland, a compatibility layer over wayland for apps that don't supìport wayland yet
@@ -159,8 +155,24 @@ in
     # package = hyprland-flake.packages.${pkgs.system}.hyprland;
   };
 
+
+  # Display Manager ----------
+ /* 
+  # Enable Greetd
+  services.greetd.wlgreet = {
+    enable = true;
+    settings = {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+      };
+      default_session = initial_session;
+    };
+  };
+*/
   # Enable sddm for wayland
   #services.xserver.displayManager.sddm.wayland.enable = true;
+
+  # -----------------------
 
   # Configure console keymap
   console.keyMap = "it2";

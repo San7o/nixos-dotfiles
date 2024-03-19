@@ -17,17 +17,21 @@ Make sure there is no new line in the file (`0x0a`)
 
 Build the system with with
 ```bash
-sudo nixos-rebuild switch --flake . --impure
+sudo nixos-rebuild switch --flake .<profile-here> --impure
+```
+Or with the `build.sh` script
+```bash
+./build.sh system <profile-here>
 ```
 impure lets you read gihub credentials from .secrets
 
-I personally don't place my config in `/etc/nixos/` but I have this repo on my home inside `.config/nixos`
+I don't place my config in `/etc/nixos/` but I have this repo on my home inside `.config/nixos`
 
 ## Structure
 
 ```
+├── build.sh                 # Script to manage nixos-rebuild / home-manager
 ├── configuration.nix        # The main configuration file for system
-├── fhs.nix                  # Run nix-shell with this file for a FHS compatible shell
 ├── flake.lock               
 ├── flake.nix                # I use flake
 ├── home                     # Home configuration
@@ -48,8 +52,9 @@ I personally don't place my config in `/etc/nixos/` but I have this repo on my h
 │       ├── alacritty.nix 
 │       ├── bash.nix
 │       ├── default.nix
+├───────├── fhs.nix          # Run nix-shell with this file for a FHS compatible shell
 │       ├── kitty.nix        # I currently use kitty
-│       └── shell.nix
+│       └── shell.nix        # Example nixos-shell
 ├── hosts                    # Different hardware configuration for different hardware
 │   └── hp-laptop            # My main laptop
 │       ├── default.nix
@@ -69,6 +74,17 @@ I personally don't place my config in `/etc/nixos/` but I have this repo on my h
     └── nixos-light.png
 
 
+```
+
+# home-manager
+
+You can manage the user environment without sudo thanks to home manager. Inside `flake.nix` there is a profile for `santo@home` that imports the modules at `home/santo/`. You can build your profile with home-manager with this command:
+```bash
+home-manager switch --flake flake.nix#santo@home --impure
+```
+Or with my build script
+```bash
+./build.sh home santo@home
 ```
 
 # nix-shell
@@ -96,7 +112,7 @@ With `nix develop` you mantain in scope all your user programs
 
 ## Run a FHS shell
 ```bash
-nix-shell modules/fhs.nix
+nix-shell home/shared/fhs.nix
 ```
 
 

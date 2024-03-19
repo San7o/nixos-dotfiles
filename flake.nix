@@ -71,18 +71,17 @@
     };
 
 
-/*
       # home-manager
       #
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager <command> --flake .#username@hostname'
       homeConfigurations = {
-        "santo@nixos" =
+        "santo@home" =
             home-manager.lib.homeManagerConfiguration {
               pkgs = nixpkgs.legacyPackages."x86_64-linux";
-              modules = [ ./home-manager ];
+              modules = [ ./home/santo ];
             };
-        };
-*/
+      };
+
   };
 }

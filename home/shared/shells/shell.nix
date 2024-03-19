@@ -1,4 +1,11 @@
 /*
+
+# Usage
+
+nix-shell <path-to-shell>
+
+# Why using nix-shell for developement
+
 While it is true that you can install compilers globally to environment.systemPackages, this is actually not the "standard configuration" for development tools. The recommended method is in fact nix-shell (or nix-develop for a flake-based environment), which was specifically designed to create cleanly separated development environments.
 
 For example, you can place a file named shell.nix in your project folder with this code:
@@ -20,7 +27,8 @@ Don't worry about wasting disk space, either: as long as two nix-shells use the 
 
 { pkgs ? import <nixpkgs> {} }: pkgs.mkShell {
   nativeBuildInputs = with pkgs.buildPackages; [
-    libgcc
+    gcc.cc.libgcc
+    stdmanpages  # To use man for std functions
     # cargo
     # rustc
   ];

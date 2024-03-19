@@ -32,6 +32,7 @@
     # it provides the command `nom` works just like `nix`
     # with more details log output
     nix-output-monitor
+    home-manager
 
     # Applications
     firefox
@@ -83,6 +84,7 @@
     kitty         # Wayland terminal 
     hyprpaper     # wallpaper engine for hyprland
     wl-gammactl   # anage screen gamma and contrast
+    greetd.wlgreet # display / login manager
 
     # Visual
 
