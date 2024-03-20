@@ -2,24 +2,31 @@
 
 
 {
-  programs.neovim.enable = true;
+  programs.neovim = { 
 
-  # Set default editor to neovim
-  # - apparently this deas not work
-  programs.neovim.defaultEditor = true;
-  home.sessionVariables.EDITOR = "nvim";
+    enable = true;
+    defaultEditor = true;
 
-  # Install plugins
-  # Search for them here
-  # https://search.nixos.org/packages?from=0&size=50&sort=relevance&type=packages&query=vimPlugins
-  # https://github.com/m15a/nixpkgs-vim-extra-plugins
-  # https://github.com/NixNeovim/NixNeovimPlugins
+    # Install plugins
+    # Search for them here
+    # https://search.nixos.org/packages?from=0&size=50&sort=relevance&type=packages&query=vimPlugins
+    # https://github.com/m15a/nixpkgs-vim-extra-plugins
+    # https://github.com/NixNeovim/NixNeovimPlugins
+    plugins = with pkgs.vimPlugins; [
+      nvim-tree-lua
+      vim-startify
+      nerdtree
 
-  programs.neovim.plugins = with pkgs.vimPlugins; [
-    nvim-tree-lua
-    vim-startify
-    nerdtree
-  ];
+      syntastic       # Code syntax checking for a lot of languages
+      YouCompleteMe   # Code completition for most languages
+      vim-airline     # Bottom bar with some informations
+      emmet-vim       # Amazing html completition
+    ];
 
+    extraConfig = ''
+      set expandtab
+      set tabstop=4
+    '';
 
+  };
 }
