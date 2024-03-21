@@ -7,6 +7,7 @@
 
   imports = [
     ../shared       # Shared configs
+    ./dev           # dev configs
   ];
 
   # link all files in `./scripts` to `~/.config/i3/scripts`

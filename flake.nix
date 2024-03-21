@@ -61,7 +61,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.edi = import ./home/lanto;
+            home-manager.users.lanto = import ./home/lanto;
           }
 
         ];
@@ -71,17 +71,26 @@
     };
 
 
-      # home-manager
-      #
-      # Standalone home-manager configuration entrypoint
-      # Available through 'home-manager <command> --flake .#username@hostname'
-      homeConfigurations = {
+    # home-manager
+    #
+    # Standalone home-manager configuration entrypoint
+    # Available through 'home-manager <command> --flake .#username@hostname'
+    homeConfigurations = {
         "santo@home" =
             home-manager.lib.homeManagerConfiguration {
               pkgs = nixpkgs.legacyPackages."x86_64-linux";
               modules = [ ./home/santo ];
             };
       };
+
+    homeConfigurations = {
+        "lanto@home" =
+            home-manager.lib.homeManagerConfiguration {
+              pkgs = nixpkgs.legacyPackages."x86_64-linux";
+              modules = [ ./home/lanto ];
+            };
+      };
+
 
   };
 }
