@@ -41,6 +41,13 @@
 		  # estimation figures
     btop          # System monitor
     ncdu          # Analyze disk usage 
+
+    # Media editing
+    audacity            # audio
+    libsForQt5.kdenlive # video editor
+    olive-editor        # new and promising video editor
+    obs-studio          # recording
+    gimp-with-plugins   # image editor
  ];
   
   # This value determines the home Manager release that your

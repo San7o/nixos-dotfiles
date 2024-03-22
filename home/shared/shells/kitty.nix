@@ -13,6 +13,13 @@
 # Kitty confif file
 confirm_os_window_close 0
 
+# Fonts
+font_family      Liberation Mono
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+
+
 # Change font size
 font_size 12.0
 
