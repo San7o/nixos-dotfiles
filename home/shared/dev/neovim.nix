@@ -21,11 +21,13 @@
       YouCompleteMe   # Code completition for most languages
       vim-airline     # Bottom bar with some informations
       emmet-vim       # Amazing html completition
+      telescope-zoxide  # Fuzzy finder
     ];
 
     extraConfig = ''
       set expandtab
       set tabstop=4
+      set rnu
     '';
 
   };
