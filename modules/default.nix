@@ -62,6 +62,7 @@
     # feh           # to set background
     tree          # list files and folder in a tree structure
     brightnessctl # manage brightness
+    gnome.cheese  # webcam
 
     # Virtualisation
     docker

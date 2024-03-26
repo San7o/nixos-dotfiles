@@ -13,6 +13,9 @@
 # Kitty confif file
 confirm_os_window_close 0
 
+# Set zsh as default shell
+shell zsh
+
 # Fonts
 font_family      Liberation Mono
 bold_font        auto

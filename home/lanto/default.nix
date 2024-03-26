@@ -33,6 +33,7 @@
   home.packages = with pkgs; [
        # Lanto is gonna be a very light user 
        # With only the necessary programs he needs
+       cura # TODO remove
  ];
   
   # This value determines the home Manager release that your
