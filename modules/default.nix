@@ -46,6 +46,9 @@
     ltrace        # debug programs
     strace        # debug programs
     python3
+    # Zsh
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 
     # Utilities / Misc
     ranger        # Visual file manager

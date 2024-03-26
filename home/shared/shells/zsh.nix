@@ -1,15 +1,20 @@
 { pkgs, ... }:
 
 {
+    
     programs.zsh = {
         enable = true;
         enableCompletion = true;
         history.size = 1000;
         history.path = "$HOME/.hisfile";
-        # autosuggestion.enable = true;
-        
+
+        # Plugins
+        enableAutosuggestions = true;
+        syntaxHighlighting.enable = true;
+
         initExtra = ''
              unsetopt BEEP
+             setopt hist_ignore_all_dups
         '';
 
 

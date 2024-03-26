@@ -16,6 +16,9 @@ confirm_os_window_close 0
 # Set zsh as default shell
 shell zsh
 
+# Set margin
+window_padding_width 20
+
 # Fonts
 font_family      Liberation Mono
 bold_font        auto
@@ -33,8 +36,8 @@ direct_urls yes
 
 # Define a color table
 # Cool palette https://coolors.co/palette/6f1d1b-bb9457-432818-99582a-ffe6a7
-foreground #EFDECD
-background #282828
+# foreground #EFDECD
+# background #282828
 
 # Opacity, Be aware that using a value
 # less than 1.0 is a (possibly significant)
@@ -54,12 +57,13 @@ editor nvim
 # kitten themes
 
 # Darkside theme
-background #212324
+# background #212324
+background #2C2C2C
 foreground #b9b9b9
 cursor #bbbbbb
 selection_background #2f3333
 color0 #000000
-color8 #000000
+color8 #C8BB97
 color1 #e8331c
 color9 #df5a4f
 color2 #68c156
