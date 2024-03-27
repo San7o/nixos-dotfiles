@@ -15,6 +15,8 @@
         initExtra = ''
              unsetopt BEEP
              setopt hist_ignore_all_dups
+
+             alias sn="shutdown now"
         '';
 
 
