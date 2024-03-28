@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hardware, ... }:
 
 {
 
@@ -48,8 +48,17 @@
     olive-editor        # new and promising video editor
     obs-studio          # recording
     gimp-with-plugins   # image editor
+
+    # Gaming
+    steam
+    # Games
+    osu-lazer
+
  ];
-  
+
+  # Allow unfree software
+  nixpkgs.config.allowUnfree = true;
+
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards

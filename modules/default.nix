@@ -97,7 +97,7 @@
   # Enable docker
   virtualisation.docker.enable = true;
 
-  # Obsidian needs electron, wich is considered insecure
+  # Obsidian needs electron, which is considered insecure
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
@@ -105,5 +105,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+
+  # Open Tablet Driver
+  hardware.opentabletdriver = {
+      enable = true;
+      daemon.enable = false;
+  };
 
 }
