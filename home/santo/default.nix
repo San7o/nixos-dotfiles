@@ -51,6 +51,8 @@
 
     # Gaming
     steam
+    wineWowPackages.stable
+    winetricks
     # Games
     osu-lazer
 
