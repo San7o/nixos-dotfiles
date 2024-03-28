@@ -222,4 +222,3 @@ https://search.nixos.org/packages?channel=23.11&show=git&from=0&size=50&sort=rel
 # TODO
 
 - [ ] Login Manager
-- [ ] Shutdown GUI
