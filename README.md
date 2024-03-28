@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Version-1.0.0-blue" alt="Version 1.0.0">
-  <img src="https://img.shields.io/badge/License-MIT-green" alt="License MIT">
+  <img src="https://img.shields.io/badge/NixOS-5277C3?style=for-the-badge&logo=nixos&logoColor=white" alt="NixOS">
 </p>
 
 <p align="center">
