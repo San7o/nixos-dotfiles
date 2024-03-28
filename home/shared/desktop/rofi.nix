@@ -6,13 +6,15 @@
     
     # Overwrite the file
     force = true;
+
+    # Use rofi-theme-selector for themes
     text = ''
 
 // Rofi rounded yellow
 
 // Colors
 * {
-    bg0:    #212121F2;
+    bg0:    #272E33;
     bg1:    #2A2A2A;
     bg2:    #3D3D3D80;
     bg3:    #FBC02DF2;

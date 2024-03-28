@@ -1,4 +1,4 @@
-<h1 align="center">🚀 Welcome to my NixOS config files! 🚀</h1>
+<h1 align="center">Welcome to my NixOS config files!</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Version-1.0.0-blue" alt="Version 1.0.0">
@@ -9,8 +9,33 @@
   NixOS is a fully reproducible operating system based on the Nix package manager. A good guide on NixOS can be found <a href="https://nixos-and-flakes.thiscute.world/introduction/">here</a>.
 </p>
 
+# 🛠️ What I use
+| What | Item |
+|----------|---------|
+| OS | NixOS \w Flakes && Home-Manager |
+| Display Manager | Wayland |
+| Compositor | HyprLand |
+| Bar | Waybar |
+| Notification Manager | Dunst |
+| App Launcher | Rofi |
+| Take Screenshots | Grim + Slurp + Wl-clipboard |
+| Terminal Emulator | Kitty |
+| Shell | Zsh |
+| Wallpaper Manager | Hyprpaper |
+| Email client | Thunderbird |
+| Knowledge Management | Obsidian |
+| File Manager | Thunar / Ranger |
+| Editor | Neovim |
+| Change Brightness | Brightnessctl |
 
-## 🛠️ Use my config files
+
+
+
+
+
+
+
+## Use my config files
 
 Clone my repo, then add `.secrets/` directory with the following file
 
@@ -192,4 +217,3 @@ https://search.nixos.org/packages?channel=23.11&show=git&from=0&size=50&sort=rel
 
 - [ ] Login Manager
 - [ ] Shutdown GUI
-- [ ] Color Overall

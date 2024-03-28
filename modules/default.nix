@@ -43,29 +43,29 @@
 
     # Developement
     git
-    ltrace        # debug programs
-    strace        # debug programs
+    ltrace            # debug programs
+    strace            # debug programs
     python3
     # Zsh
     zsh-autosuggestions
     zsh-syntax-highlighting
 
     # Utilities / Misc
-    ranger        # Visual file manager
-    glow          # markdown previewer in terminal
-    bat           # Better cat
-    tldr          # Simpler man
+    ranger            # Visual file manager
+    glow              # markdown previewer in terminal
+    bat               # Better cat
+    tldr              # Simpler man
     zip
     unzip
     gnutar
-    neofetch      # ofc
-    ripgrep       # the cooler grep
-    xfce.thunar   # file manager
-    thunderbird   # popular mail client
-    # feh           # to set background
-    tree          # list files and folder in a tree structure
-    brightnessctl # manage brightness
-    gnome.cheese  # webcam
+    neofetch          # ofc
+    ripgrep           # the cooler grep
+    xfce.thunar       # file manager
+    thunderbird       # popular mail client
+    # feh             # to set background
+    tree              # list files and folder in a tree structure
+    brightnessctl     # manage brightness
+    gnome.cheese      # webcam
 
     # Virtualisation
     docker
@@ -78,17 +78,18 @@
     wireshark
 
     # Wayland specific
-    waybar        # Simple bar, configured with json and css
-    dunst         # Notification manager
-    libnotify     # Dependency of dunst
-    rofi-wayland  # Wailand compatible rofi
-    grim          # Take screenshot
-    slurp         # Select a region
-    wl-clipboard  # Save on clipboard from terminal
-    kitty         # Wayland terminal 
-    hyprpaper     # wallpaper engine for hyprland
-    wl-gammactl   # anage screen gamma and contrast
-    greetd.wlgreet # display / login manager
+    waybar            # Simple bar, configured with json and css
+    dunst             # Notification manager
+    libnotify         # Dependency of dunst
+    rofi-wayland      # Wailand compatible rofi
+    rofi-power-menu   # Rofi but for power menu
+    grim              # Take screenshot
+    slurp             # Select a region
+    wl-clipboard      # Save on clipboard from terminal
+    kitty             # Wayland terminal 
+    hyprpaper         # wallpaper engine for hyprland
+    wl-gammactl       # anage screen gamma and contrast
+    greetd.wlgreet    # display / login manager
 
     # Visual
 

@@ -27,16 +27,17 @@ in
     # https://github.com/m15a/nixpkgs-vim-extra-plugins
     # https://github.com/NixNeovim/NixNeovimPlugins
     plugins = with pkgs.vimPlugins; [
-      nvim-tree-lua   # Directory tree
-      vim-startify    # Fancy start screen
-      nerdtree        # Another Directory tree
-      surround-nvim   # Shortcut to surround a work with char
-      syntastic       # Code syntax checking for a lot of languages
-      YouCompleteMe   # Code completition for most languages
-      vim-airline     # Bottom bar with some informations
-      emmet-vim       # Amazing html completition
-      telescope-zoxide  # Fuzzy finder
-      fine-cmdline    # Better looking command line
+      nvim-tree-lua         # Directory tree
+      vim-startify          # Fancy start screen
+      nerdtree              # Another Directory tree
+      surround-nvim         # Shortcut to surround a work with char
+      syntastic             # Code syntax checking for a lot of languages
+      YouCompleteMe         # Code completition for most languages
+      vim-airline           # Bottom bar with some informations
+      emmet-vim             # Amazing html completition
+      telescope-zoxide      # Fuzzy finder
+      fine-cmdline          # Better looking command line
+      nvim-colorizer-lua    # Show hex colors immediately
     ];
 
     extraConfig = ''
