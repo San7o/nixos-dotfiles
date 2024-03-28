@@ -1,6 +1,4 @@
-# nixos-config
-
-My NixOS configuration files
+<h1 align="center"> Welcome to my NixOS config files!</h1>
 
 NixOs is a fully reproducible operating system based on the Nix package manager. A good guide on NixOs can be found [here](https://nixos-and-flakes.thiscute.world/introduction/).
 
@@ -28,7 +26,7 @@ impure lets you read gihub credentials from .secrets
 I don't place my config in `/etc/nixos/` but I have this repo on my home inside `.config/nixos`
 
 ## Structure
-
+Take a look around
 ```
 ├── build.sh                 # Script to manage nixos-rebuild / home-manager
 ├── configuration.nix        # The main configuration file for system
