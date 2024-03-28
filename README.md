@@ -24,6 +24,7 @@
 | Bar | Waybar |
 | Notification Manager | Dunst |
 | App Launcher | Rofi |
+| Network | Network-Manager |
 | Take Screenshots | Grim + Slurp + Wl-clipboard |
 | Terminal Emulator | Kitty |
 | Shell | Zsh |
