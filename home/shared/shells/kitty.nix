@@ -32,13 +32,6 @@ font_size 12.0
 # Direct URL under the mouse
 direct_urls yes
 
-# Colors
-
-# Define a color table
-# Cool palette https://coolors.co/palette/6f1d1b-bb9457-432818-99582a-ffe6a7
-# foreground #EFDECD
-# background #282828
-
 # Opacity, Be aware that using a value
 # less than 1.0 is a (possibly significant)
 # performance hit
@@ -54,31 +47,79 @@ background_image none
 # Set nvim as default editor
 editor nvim
 
-# kitten themes
+# kitten themes -------------------------
 
-# Darkside theme
-# background #212324
-background #2C2C2C
-foreground #b9b9b9
-cursor #bbbbbb
-selection_background #2f3333
-color0 #000000
-color8 #C8BB97
-color1 #e8331c
-color9 #df5a4f
-color2 #68c156
-color10 #76b768
-color3 #f1d32b
-color11 #eed64a
-color4 #1c98e8
-color12 #387bd2
-color5 #8e69c8
-color13 #957bbd
-color6 #1c98e8
-color14 #3d96e2
-color7 #b9b9b9
-color15 #b9b9b9
-selection_foreground #212324
+## name: Everforest Dark Hard
+## author: Sainnhe Park
+## license: MIT
+## upstream: https://github.com/ewal/kitty-everforest/blob/master/themes/everforest_dark_hard.conf
+## blurb: A green based color scheme designed to be warm and soft
+
+foreground                      #d3c6aa
+background                      #272e33
+selection_foreground            #9da9a0
+selection_background            #464e53
+
+cursor                          #d3c6aa
+cursor_text_color               #2e383c
+
+url_color                       #7fbbb3
+
+active_border_color             #a7c080
+inactive_border_color           #4f5b58
+bell_border_color               #e69875
+visual_bell_color               none
+
+wayland_titlebar_color          system
+macos_titlebar_color            system
+
+active_tab_background           #272e33
+active_tab_foreground           #d3c6aa
+inactive_tab_background         #374145
+inactive_tab_foreground         #9da9a0
+tab_bar_background              #2e383c
+tab_bar_margin_color            none
+
+mark1_foreground                #272e33
+mark1_background                #7fbbb3
+mark2_foreground                #272e33
+mark2_background                #d3c6aa
+mark3_foreground                #272e33
+mark3_background                #d699b6
+
+#: black
+color0                          #343f44
+color8                          #868d80
+
+#: red
+color1                          #e67e80
+color9                          #e67e80
+
+#: green
+color2                          #a7c080
+color10                         #a7c080
+
+#: yellow
+color3                          #dbbc7f
+color11                         #dbbc7f
+
+#: blue
+color4                          #7fbbb3
+color12                         #7fbbb3
+
+#: magenta
+color5                          #d699b6
+color13                         #d699b6
+
+#: cyan
+color6                          #83c092
+color14                         #83c092
+
+#: white
+color7                          #859289
+color15                         #9da9a0
+
+# -------------------------------------
 
 '';
   };
