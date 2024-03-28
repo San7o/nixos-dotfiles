@@ -1,8 +1,16 @@
-<h1 align="center"> Welcome to my NixOS config files!</h1>
+<h1 align="center">🚀 Welcome to my NixOS config files! 🚀</h1>
 
-NixOs is a fully reproducible operating system based on the Nix package manager. A good guide on NixOs can be found [here](https://nixos-and-flakes.thiscute.world/introduction/).
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-1.0.0-blue" alt="Version 1.0.0">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License MIT">
+</p>
 
-## Use my config files
+<p align="center">
+  NixOS is a fully reproducible operating system based on the Nix package manager. A good guide on NixOS can be found <a href="https://nixos-and-flakes.thiscute.world/introduction/">here</a>.
+</p>
+
+
+## 🛠️ Use my config files
 
 Clone my repo, then add `.secrets/` directory with the following file
 
@@ -25,7 +33,7 @@ impure lets you read gihub credentials from .secrets
 
 I don't place my config in `/etc/nixos/` but I have this repo on my home inside `.config/nixos`
 
-## Structure
+## 🏗️ Structure
 Take a look around
 ```
 ├── build.sh                 # Script to manage nixos-rebuild / home-manager
@@ -74,7 +82,7 @@ Take a look around
 
 ```
 
-# home-manager
+# 🏠 home-manager
 
 You can manage the user environment without sudo thanks to home manager. Inside `flake.nix` there is a profile for `santo@home` that imports the modules at `home/santo/`. You can build your profile with home-manager with this command:
 ```bash
@@ -85,7 +93,7 @@ Or with my build script
 ./build.sh home santo@home
 ```
 
-# nix-shell
+# 🐚 nix-shell
 
 For developement consistency, NixOS uses (enforces...) the use of nix-shell (or `nix develop` for flake configuration). You can create and enter into developement environment it with the command `nix-shell`. You can provide the packages with `-p` or use a configuration file like so:
 `modules/shell/shell.nix`
@@ -120,12 +128,12 @@ nix-shell -p appimage-run
 [nix-shell]$ appimage-run <your-appimage>
 ```
 
-## Upgrade the system
+## ⬆️  Upgrade the system
 ```bash
 nix flake update
 ```
 
-## Remove Garbage
+## 🗑️ Remove Garbage
 Remove system versions and packages no longer used by new generations by 15 days
 ```bash
 nix-channel --update
@@ -159,13 +167,13 @@ In `main-user.nix`
 If you call a file `default.nix`, you can access It just bu importing It's folder
 
 
-# Finding options and functions
+## Finding options and functions
 
 ```bash
 nix search nixpkgs <searchterm>
 ```
 
-# Rerources
+# 🎥 Rerources
 ## Videos
 https://www.youtube.com/watch?v=CwfKlX3rA6E
 
