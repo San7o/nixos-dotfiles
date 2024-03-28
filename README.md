@@ -9,6 +9,12 @@
   NixOS is a fully reproducible operating system based on the Nix package manager. A good guide on NixOS can be found <a href="https://nixos-and-flakes.thiscute.world/introduction/">here</a>.
 </p>
 
+![Neofetch](./misc/screenshots/01.jpg)
+![Dmenu](./misc/screenshots/02.jpg)
+![Neovim](./misc/screenshots/03.jpg)
+![Obsidian](./misc/screenshots/04.jpg)
+
+
 # 🛠️ What I use
 | What | Item |
 |----------|---------|
