@@ -34,6 +34,7 @@
 | Knowledge Management | Obsidian |
 | File Manager | Thunar / Ranger |
 | Editor | Neovim |
+| Browser | Vivaldi |
 | Change Brightness | Brightnessctl |
 
 
