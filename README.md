@@ -44,12 +44,8 @@
 
 ## Use my config files
 
-Clone my repo, then add `.secrets/` directory with the following file
+Clone my repo, then add `.secrets/` directory with the file `.secrets/github-access-token`
 
-`.secrets/github-access-token`
-```
-https://username:token@github.com
-```
 Make sure there is no new line in the file (`0x0a`)
 
 
