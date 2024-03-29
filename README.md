@@ -23,6 +23,7 @@
 | Compositor | HyprLand |
 | Bar | Waybar |
 | Notification Manager | Dunst |
+| Audio | Pipewire |
 | App Launcher | Rofi |
 | Network | Network-Manager |
 | Take Screenshots | Grim + Slurp + Wl-clipboard |
