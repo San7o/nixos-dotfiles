@@ -6,6 +6,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
+
 { lib, config, pkgs, ... }:
 
 let
@@ -156,23 +157,29 @@ in
   };
 
 
+
   # Display Manager ----------
- /* 
   # Enable Greetd
-  services.greetd.wlgreet = {
+  /*
+  services.greetd = {
     enable = true;
-    settings = {
+    settings = rec {
       initial_session = {
         command = "${pkgs.hyprland}/bin/Hyprland";
       };
       default_session = initial_session;
     };
   };
-*/
-  # Enable sddm for wayland
-  #services.xserver.displayManager.sddm.wayland.enable = true;
+  */
 
+  # Enable sddm for wayland
+  #services.xserver.displayManager.sddm = {
+  #  enable = true;
+  #  wayland.enable = true;
+  #};
   # -----------------------
+
+
 
   # Configure console keymap
   console.keyMap = "it2";
@@ -203,10 +210,12 @@ in
   nixpkgs.config.allowUnfree = true;
 
 
+
   # FLAKES -------------------------------------------------------------- #
   #
   # Enable the flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
 
 
   # Some programs need SUID wrappers, can be configured further or are
