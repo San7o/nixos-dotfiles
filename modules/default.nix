@@ -36,6 +36,7 @@
 
     # Applications
     firefox
+    vivaldi
     zoom-us
     discord
     telegram-desktop
