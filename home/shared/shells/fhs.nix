@@ -15,7 +15,7 @@
     # Import packages here
     udev
     alsa-lib
-    libgcc   
+    gcc.cc.libgcc   
     zlib             # Many applications require libz.so.1
     appimage-run     # To run appimages
   ]);
