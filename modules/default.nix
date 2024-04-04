@@ -71,7 +71,7 @@
     # Virtualisation
     docker
     docker-compose
-
+    qemu
  
     # Networking
     wget
