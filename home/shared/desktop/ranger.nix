@@ -11,6 +11,7 @@
     text = ''
 set preview_images true
 set preview_images_method kitty
+set show hidden true
   '';
   };
 }
