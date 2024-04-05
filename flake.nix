@@ -20,7 +20,6 @@
     # System configuration
     #
     nixosConfigurations = {
-      # Your hostname
       "santo@acer" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -46,6 +45,32 @@
 
         ];
       };
+      "santo@desktop" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+
+	  # System Configuration
+          ./configuration.nix
+
+	  # Hardware configuration
+          ./hosts/desktop
+
+          # make home-manager as a module of nixos
+          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            # Set home-manager for the user santo
+            home-manager.users.santo = import ./home/santo;
+            
+            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+          }
+
+        ];
+      };
+ 
       # Your hostname
       "lanto@hp" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
