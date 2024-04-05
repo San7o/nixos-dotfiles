@@ -24,11 +24,9 @@
         system = "x86_64-linux";
         modules = [
 
-	  # System Configuration
-          ./configuration.nix
-
-	  # Hardware configuration
+	  # System and Hardware configuration
           ./hosts/acer-laptop
+          ./modules
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
@@ -49,11 +47,9 @@
         system = "x86_64-linux";
         modules = [
 
-	  # System Configuration
-          ./configuration.nix
-
-	  # Hardware configuration
+	  # System and Hardware configuration
           ./hosts/desktop
+          ./modules
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
@@ -76,10 +72,9 @@
         system = "x86_64-linux";
         modules = [
 
-	  # System Configuration
-          ./configuration.nix
-
+	  # System and Hardware Configuration
           ./hosts/hp-laptop
+          ./modules
           
 	  home-manager.nixosModules.home-manager
           {

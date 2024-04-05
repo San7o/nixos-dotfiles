@@ -20,22 +20,21 @@ let
 
 in
 {
-  # This is how you import modules
-  # At each module, we are passing all the environment as arguments
-  # It's as if those modules were written in this file
-  imports =
-    [ 
-	# System packages (common to all users)
-	./modules
-    ];
-
-
+  
   # --------------------------- Set-up the system -------------------------- #
 
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Bootloader: Desktop currently uses Legacy bios
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
+
+  # You need this to run legacy mode
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = false;
+    device = "/dev/nvme0n1";
+  };
+
   
   # I don't know if I need this or not
   # boot.kernelModules = [ "fuse" ];
