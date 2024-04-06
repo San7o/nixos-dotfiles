@@ -49,7 +49,28 @@ in
       nnoremap <leader>fg <cmd>Telescope live_grep<cr>
       nnoremap <leader>fb <cmd>Telescope buffers<cr>
       nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-    '';
 
+      let g:ycm_confirm_extra_conf = 0
+
+    '';
   };
+
+
+
+  # YCM Settings for C/C++
+  home.file.".ycm_extra_conf.py" = {
+    
+      # Overwrite the file
+      force = true;
+      text = ''
+
+   def Settings(**kwargs):
+    return {
+        'flags': ['-Wall' ],
+    }   
+
+      '';
+    };
+
+
 }
