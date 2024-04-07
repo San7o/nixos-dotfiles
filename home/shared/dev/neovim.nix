@@ -38,6 +38,7 @@ in
       telescope-zoxide      # Fuzzy finder
       fine-cmdline          # Better looking command line
       nvim-colorizer-lua    # Show hex colors immediately
+      gitsigns-nvim         # Hilight text changed from last commit
     ];
 
     extraConfig = ''
@@ -53,8 +54,12 @@ in
       let g:ycm_confirm_extra_conf = 0
 
     '';
-  };
 
+    extraLuaConfig = ''
+      require("gitsigns").setup()
+      require("nvim-tree").setup()
+    '';
+  };
 
 
   # YCM Settings for C/C++

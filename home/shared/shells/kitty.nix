@@ -27,7 +27,7 @@ bold_italic_font auto
 
 
 # Change font size
-font_size 12.0
+font_size 11.0
 
 # Direct URL under the mouse
 direct_urls yes
