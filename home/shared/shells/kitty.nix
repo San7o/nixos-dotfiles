@@ -49,52 +49,70 @@ editor nvim
 
 # kitten themes -------------------------
 
-# Alucard
+# Dark One Nuanced by ariasuni, https://store.kde.org/p/1225908
+# Imported from KDE .colorscheme format by thematdev, https://thematdev.org
+# For migrating your schemes from Konsole format see 
+# https://git.thematdev.org/thematdev/konsole-scheme-migration
 
-background #222330
-foreground #cef3ff
-cursor #ffffff
-selection_background #44475a
-color0 #000000
-color8 #545454
-color1 #ff5555
-color9 #ff5454
-color2 #fa0074
-color10 #50fa7b
-color3 #7f0a1f
-color11 #f0fa8b
-color4 #3282ff
-color12 #1200f8
-color5 #1b3cff
-color13 #ff78c5
-color6 #0037fc
-color14 #8ae9fc
-color7 #bbbbbb
+
+# importing Background
+background #282c34
+# importing BackgroundFaint
+# importing BackgroundIntense
+# importing Color0
+color0 #3f4451
+# importing Color0Faint
+color16 #282c34
+# importing Color0Intense
+color8 #4f5666
+# importing Color1
+color1 #e06c75
+# importing Color1Faint
+color17 #c25d66
+# importing Color1Intense
+color9 #ff7b86
+# importing Color2
+color2 #98c379
+# importing Color2Faint
+color18 #82a566
+# importing Color2Intense
+color10 #b1e18b
+# importing Color3
+color3 #d19a66
+# importing Color3Faint
+color19 #b38257
+# importing Color3Intense
+color11 #efb074
+# importing Color4
+color4 #61afef
+# importing Color4Faint
+color20 #5499d1
+# importing Color4Intense
+color12 #67cdff
+# importing Color5
+color5 #c678dd
+# importing Color5Faint
+color21 #a966bd
+# importing Color5Intense
+color13 #e48bff
+# importing Color6
+color6 #56b6c2
+# importing Color6Faint
+color22 #44919a
+# importing Color6Intense
+color14 #63d4e0
+# importing Color7
+color7 #e6e6e6
+# importing Color7Faint
+color23 #c8c8c8
+# importing Color7Intense
 color15 #ffffff
-selection_foreground #222330
+# importing Foreground
+foreground #abb2bf
+# importing ForegroundFaint
+# importing ForegroundIntense
+# importing General
 
-# Galaxy
-background            #1c2836
-foreground            #ffffff
-cursor                #bbbbbb
-selection_background  #b4d5ff
-color0                #000000
-color8                #545454
-color1                #f9555f
-color9                #fa8b8e
-color2                #20af89
-color10               #34bb99
-color3                #fdf029
-color11               #ffff55
-color4                #589cf5
-color12               #589cf5
-color5                #934d95
-color13               #e75598
-color6                #1e9ee6
-color14               #3978bb
-color7                #bbbbbb
-color15               #ffffff
-selection_foreground #1c2836
 
 '';
   };
