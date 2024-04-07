@@ -23,4 +23,8 @@
       # Access the nvidia settings menu via nvidia-settings
       nvidiaSettings = true;
   };
+
+
+  # Enable patches for better Nvidia support
+  programs.hyprland.enableNvidiaPatches = true;
 }

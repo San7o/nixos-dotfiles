@@ -14,7 +14,7 @@
     # ./cache-server.nix
 
     # Nvidia configuration
-    ./nvidia.nix
+    # ./nvidia.nix
 
     # Setup network manager configs for unitn-x and eduroam
     # ./network-manager.nix

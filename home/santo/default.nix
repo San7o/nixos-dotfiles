@@ -56,6 +56,9 @@
     # Games
     osu-lazer
 
+    # Graphics
+    mesa-demos          # opengl and lots of tests
+
  ];
 
   # Allow unfree software
