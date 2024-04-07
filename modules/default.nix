@@ -64,6 +64,7 @@
     tree              # list files and folder in a tree structure
     brightnessctl     # manage brightness
     gnome.cheese      # webcam
+    cowsay            # For fun
 
     # Virtualisation
     docker

@@ -10,12 +10,14 @@ fi
 
 if [[ $1 == "home" ]]; then
 	home-manager switch --flake .#$2 --impure
+    cowsay "Everything is fine"
 	exit
 
 fi
 if [[ $1 == "system" ]]; then
 
 	sudo nixos-rebuild switch --flake .#$2 --impure
+    cowsay "Everything is fine"
 	exit
 fi
 
