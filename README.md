@@ -37,7 +37,7 @@
 | Browser | Vivaldi |
 | Change Brightness | Brightnessctl |
 
-# My dardware
+# My Hardware
 
 ## Computers
 
