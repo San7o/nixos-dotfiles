@@ -37,9 +37,24 @@
 | Browser | Vivaldi |
 | Change Brightness | Brightnessctl |
 
-# My Hardware
+## Vim plugins
+| Name | Description |
+| ---- | ----------- |
+| nvim-tree-lua | Directory Tree |
+| vim-stratify | Fancy Start Screen |
+| nerdtree              | Another Directory tree |
+| surround-nvim         | Shortcut to surround a work with char |
+| syntastic             | Code syntax checking for a lot of languages |
+| YouCompleteMe         | Code completition for most languages |
+| vim-airline           | Bottom bar with some informations |
+| emmet-vim             | Amazing html completition |
+| telescope-zoxide      | Fuzzy finder |
+| fine-cmdline          | Better looking command line |
+| nvim-colorizer-lua    | Show hex colors immediately |
 
-## Computers
+# 🔩 My Hardware
+
+## 🖥️ Computers
 
 | Name             | System | Role                       | Notes                                                                     | User   |
 | ---------------- | -------| -------------------------- | ------------------------------------------------------------------------- | ------ |
@@ -50,7 +65,7 @@
 | Laptop 3 | Archlinux | - | - | - |
 | Laptop 4 | Debian  | - | Too old to be useful | - |
 
-## Devices
+## 🔌 Devices
 
 | Nome         | Role                | Notes  |
 | ------------ | ------------------- | ------ |
@@ -61,7 +76,7 @@
 | Launchpad S  | App-launcher        |        |
 
 
-# Use my config files
+# 🪛 Use my config files
 
 Clone my repo, then add `.secrets/` directory with the file `.secrets/github-access-token`
 
@@ -81,51 +96,87 @@ impure lets you read gihub credentials from .secrets
 I don't place my config in `/etc/nixos/` but I have this repo on my home inside `.config/nixos`
 
 ## 🏗️ Structure
-Take a look around
-```
-├── build.sh                 # Script to manage nixos-rebuild / home-manager
-├── configuration.nix        # The main configuration file for system
-├── flake.lock               
-├── flake.nix                # I use flake
-├── home                     # Home configuration
-│   ├── default.nix          # Configuration for user "santo"
-│   ├── desktop              # Configurations for desktop managers
-│   │   ├── default.nix      
-│   │   ├── hyprland.nix     # I'm currently using hyprland
-│   │   ├── hyprpaper.nix    # wallpaper manager for hyprland
-│   │   └── i3.nix           # I have also some old configs for i3
-│   ├── dev                  # Configurations for developer applications
+Take a look around (might not be updated to the lastest version)
+``` 
+├── build.sh                        # Easy to use build script
+├── flake.lock                      # Lock file for flakes
+├── flake.nix                       # All flakes profiles are defined here
+├── home                            # Home Manager configurations
+│   ├── lanto                       # Minimal user with just the necessary stuff
+│   │   ├── default.nix             
+│   │   └── dev
+│   │       ├── default.nix
+│   │       └── git.nix             # Git configurations and setting up credentials
+│   ├── santo                       # Power user with many programs
 │   │   ├── default.nix
-│   │   ├── git.nix          # Git config, saves the acces token
-│   │   └── neovim.nix
-│   ├── programs             # Configs for misc applications
-│   │   ├── default.nix
-│   │   └── obsidian.nix
-│   └── shells               # Config for shells
-│       ├── alacritty.nix 
-│       ├── bash.nix
+│   │   ├── dev
+│   │   │   ├── default.nix
+│   │   │   └── git.nix
+│   │   └── programs
+│   │       └── default.nix
+│   └── shared                      # Pakages and configurations shared between users
 │       ├── default.nix
-├───────├── fhs.nix          # Run nix-shell with this file for a FHS compatible shell
-│       ├── kitty.nix        # I currently use kitty
-│       └── shell.nix        # Example nixos-shell
-├── hosts                    # Different hardware configuration for different hardware
-│   └── hp-laptop            # My main laptop
+│       ├── desktop
+│       │   ├── default.nix
+│       │   ├── hyprland.conf       # Hyprland
+│       │   ├── hyprpaper.conf      # Wallpapers
+│       │   ├── i3.nix
+│       │   ├── neofetch.nix
+│       │   ├── ranger.nix
+│       │   ├── rofi.nix
+│       │   └── waybar.nix
+│       ├── dev
+│       │   ├── default.nix
+│       │   └── neovim.nix          # Neovim Plugins
+│       └── shells
+│           ├── alacritty.nix
+│           ├── bash.nix
+│           ├── default.nix
+│           ├── fhs.nix             # FHS filesystem
+│           ├── kitty.nix           # I use kitty
+│           ├── shell.nix
+│           └── zsh.nix
+├── hosts                           # Configuration specific per machine
+│   ├── acer-laptop                 # Backup / Second Laptop
+│   │   ├── configuration.nix
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   ├── desktop                     # Main workstation, nvidia drivers
+│   │   ├── configuration.nix
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   └── hp-laptop                   # Unversity note taking and programming
+│       ├── configuration.nix
 │       ├── default.nix
 │       └── hardware-configuration.nix
-├── misc                     # Notes I took
-│   └── powertop.md          # How to use powertop
-├── modules                  # system level modules
-│   ├── cache-server.nix     # Enable a custom cache server
-│   ├── default.nix          # List of the modules
-│   ├── memory-optimization.nix  # Some optimizations
-│   ├── nvidia.nix           # nvidia drivers
-│   └── users.nix            # list of the users in the machine
+├── misc                            # Some notes I took that I might need in future
+│   ├── powertop.md
+│   └── screenshots
+│       ├── 01.jpg
+│       ├── 02.jpg
+│       ├── 03.jpg
+│       └── 04.jpg
+├── modules                         # System-wide configuration and packages
+│   ├── cache-server.nix
+│   ├── default.nix                 # All system packages
+│   ├── memory-optimization.nix
+│   ├── network-manager.nix
+│   ├── nvidia.nix                  # Nvidia settings
+│   └── users.nix
 ├── README.md
-└── wallpapers               # wallpapers folder
+└── wallpapers                      # A bunch of wallpapers 
+    ├── anime1.jpeg
+    ├── anime2.jpeg
+    ├── anime3.jpeg
+    ├── fishing.png
     ├── free-as-in-freedom.jpeg
+    ├── grass.jpg
+    ├── lake.png
+    ├── mountain.png
     ├── nixos-dark.png
-    └── nixos-light.png
-
+    ├── nixos-light.png
+    ├── only-grey.png
+    └── telescope.png
 
 ```
 
