@@ -46,7 +46,7 @@
 | Desktop          | NixOS  | Main workstation for computation and Gaming | i5-6500K 3.2 GHz, Nvidia 1060 3G, 16 GB ram DDR4, AC-Game Mechanical Keyboard, HP Monitor, Creative Speakers, Gaming Mouse | santo |
 | Hp Laptop        | NixOS  | University Note taking and Programming when I'm outside  | -      | lanto |
 | Laptop Acer      | NixOS  | Tests and Backups         | - | santo |
-| Computerino      | Ubuntu Server |Backup e Server  | - | santo | 
+| Computerino      | Ubuntu Server |Backups and Server  | - | santo | 
 | Laptop 3 | Archlinux | - | - | - |
 | Laptop 4 | Debian  | - | Too old to be useful | - |
 
