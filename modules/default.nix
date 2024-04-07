@@ -53,9 +53,6 @@
 
     # Utilities / Misc
     ranger            # Visual file manager
-    glow              # markdown previewer in terminal
-    bat               # Better cat
-    tldr              # Simpler man
     zip
     unzip
     gnutar
