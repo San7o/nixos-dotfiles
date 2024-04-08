@@ -51,6 +51,8 @@ in
       nnoremap <leader>fb <cmd>Telescope buffers<cr>
       nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+      nnoremap <C-Space> <cmd>NvimTreeToggle<cr>
+
       let g:ycm_confirm_extra_conf = 0
 
     '';
