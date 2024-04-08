@@ -53,9 +53,11 @@ in
 
       nnoremap <C-Space> <cmd>NvimTreeToggle<cr>
 
-      let g:ycm_confirm_extra_conf = 0
 
     '';
+    
+    # Add this to enamble ycm
+    # let g:ycm_show_diagnostics_ui = 0
 
     extraLuaConfig = ''
       require("gitsigns").setup()
