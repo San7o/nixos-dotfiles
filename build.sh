@@ -4,6 +4,7 @@ if [[ $# != 2  ]] then
 	echo -e "Usage: build.sh <system|home> <build_profie>\n"
 	echo "Currently supported users:"
 	echo " - \"santo@acer\" "
+	echo " - \"santo@desktop\" "
 	echo " - \"lanto@hp\" "
 	exit
 fi
