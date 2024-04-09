@@ -39,6 +39,7 @@ in
       fine-cmdline          # Better looking command line
       nvim-colorizer-lua    # Show hex colors immediately
       gitsigns-nvim         # Hilight text changed from last commit
+      copilot-vim           # Github's AI assistant
     ];
 
     extraConfig = ''

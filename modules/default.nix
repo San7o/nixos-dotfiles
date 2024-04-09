@@ -50,6 +50,7 @@
     # Zsh
     zsh-autosuggestions
     zsh-syntax-highlighting
+    nodejs_21         # Needed for copilot
 
     # Utilities / Misc
     ranger            # Visual file manager
