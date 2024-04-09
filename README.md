@@ -13,6 +13,7 @@
 ![Dmenu](./misc/screenshots/12.jpg)
 ![Neovim](./misc/screenshots/13.jpg)
 ![Obsidian](./misc/screenshots/14.jpg)
+![Obsidian](./misc/screenshots/15.jpg)
 
 
 # 🛠️ What I use

@@ -92,6 +92,7 @@
     greetd.wlgreet    # display / login manager
 
     # Visual
+    cava              # Music Visualizer
 
   ];
 
