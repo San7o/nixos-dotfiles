@@ -52,6 +52,7 @@
 | fine-cmdline          | Better looking command line |
 | nvim-colorizer-lua    | Show hex colors immediately |
 | gitsigns-nvim         | Hilight text that has changes since last commit |
+| copilot-nvim          | Github's AI assistant |
 
 # 🔩 My Hardware
 
