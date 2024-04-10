@@ -51,6 +51,7 @@
     zsh-autosuggestions
     zsh-syntax-highlighting
     nodejs_21         # Needed for copilot
+    haskellPackages.kmonad            # Keyboard tweaker
 
     # Utilities / Misc
     ranger            # Visual file manager
@@ -113,5 +114,7 @@
       enable = true;
       daemon.enable = true;
   };
+
+  boot.kernelModules = [ "uinput" ];
 
 }

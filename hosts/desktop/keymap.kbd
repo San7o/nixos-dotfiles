@@ -1,0 +1,162 @@
+#| --------------------------------------------------------------------------
+
+                           KEYBOARD CONFIGURATION
+
+
+   For syntax highlighting on vim ':set filetype=lisp'
+   A full list of options can be found at
+   https://github.com/kmonad/kmonad/blob/master/keymap/tutorial.kbd 
+
+
+  -------------------------------------------------------------------------- |#
+
+;; You NEED this function to be present in order for the config to work
+(defcfg
+
+
+  ;; For Linux
+  ;; Here we input the keyboard device
+  input  (device-file "/dev/input/by-id/usb-SEMITEK_USB-HID_Gaming_Keyboard_SN0000000001-event-kbd")
+
+  ;; Just leave this as It is
+  output (uinput-sink "My KMonad output"
+    ;; To understand the importance of the following line, see the section on
+    ;; Compose-key sequences at the near-bottom of this file.
+    "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt")
+  cmp-seq ralt    ;; Set the compose key to `RightAlt'
+  cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
+
+
+  ;; For Windows
+  ;; input  (low-level-hook)
+  ;; output (send-event-sink)
+
+  ;; For MacOS
+  ;; input  (iokit-name "my-keyboard-product-string")
+  ;; output (kext)
+
+
+  ;; Comment this if you want unhandled events not to be emitted
+  fallthrough true
+
+  ;; Set this to false to disable any command-execution in KMonad
+  allow-cmd true
+)
+
+
+#| --------------------------------------------------------------------------
+
+    KEYBOARD
+
+   
+    Here is where we define the base keyboard
+    Templates for some keyboards can be found here
+    https://github.com/kmonad/kmonad/tree/master/keymap
+
+    Here's a base layer for iso 100%:
+
+(deflayer name
+  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _                         _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _               _         _    _    _    _
+  _    _    _              _                   _    _    _    _          _    _    _    _    _
+)
+
+   ----------------------------------------------------------------------- |#
+
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq slck pause
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup  nlck kp/  kp*  kp-
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   del  end  pgdn  kp7  kp8  kp9  kp+
+  caps a    s    d    f    g    h    j    k    l    ;    '    \                          kp4  kp5  kp6
+  lsft 102d z    x    c    v    b    n    m    ,    .    /    rsft            up         kp1  kp2  kp3  kprt
+  lctl lmet lalt           spc                 ralt rmet cmp  rctl       left down rght  kp0  kp.
+)
+
+
+#| --------------------------------------------------------------------------
+
+    ALIASSES
+
+   ----------------------------------------------------------------------- |#
+(defalias
+  num  (layer-toggle numbers) ;; Bind num to a button that switches to a layer
+  kil  C-A-del                ;; Bind kil to a button that Ctrl-Alt-deletes
+)
+
+;; Homerow!
+;; https://precondition.github.io/home-row-mods
+(defalias
+    met_a (tap-hold-next-release 200 a lmet)
+    alt_s (tap-hold-next-release 200 s lalt)
+    ctl_d (tap-hold-next-release 200 d lctl)
+    sft_f (tap-hold-next-release 200 f lsft)
+
+    sft_j (tap-hold-next-release 200 j rsft)
+    ctl_k (tap-hold-next-release 200 k rctl)
+    alt_l (tap-hold-next-release 200 l lalt)
+    met_; (tap-hold-next-release 200 ; rmet)
+    
+    num_g (tap-hold-next-release 200 g @num)
+)
+
+#| --------------------------------------------------------------------------
+
+   DEFINING LAYERS
+
+
+   A deflayer will define a button for each corresponding evrty in the defsrc definizion.
+   Each keymap is modelled as a stack of laywes in KMonad
+   At least one deflayer is necessary
+
+   Some notes to know:
+
+  1. Any keycode evaluates to a button that, on press, emits the press of that
+     keycode, and on release, emits the release of that keycode. Just a 'normal'
+     button. The exception is '\', which gets used as an escape character. Use
+     '\\' instead. Other characters that need to be escaped to match the literal
+     character are '(', ')', and '_'.
+
+  2. An @-prefixed name evaluates to an alias lookup. We named two buttons in
+     the `defalias` block above, we could now refer to these buttons using
+     `@num` and `@kil`. This is also why we only use alias-names no longer than
+     3 characters in this tutorial. Also, note that we are already referencing
+     some aliases that have not yet been defined, this is not an issue.
+
+  3. The '_' character evaluates to transparent. I.e. no handler for that
+     key-event in this layer, causing this event to be handed down the layer
+     stack to perhaps be handled by the next layer.
+
+  4. The 'XX' character evaluates to blocked. I.e. no action bound to that
+     key-event in this layer, but do actually catch event, preventing any
+     underlying layer from handling it.
+
+  Finally, it is important to note that the *first* `deflayer` statement in a
+  KMonad config will be the layer that is active when KMonad starts up.
+
+
+   ----------------------------------------------------------------------- |#
+
+;; Using 
+(deflayer homerow
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq slck pause
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup  nlck kp/  kp*  kp-
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   del  end  pgdn  kp7  kp8  kp9  kp+
+  caps @met_a @alt_s @ctl_d @sft_f @num_g h  @sft_j @ctl_k @alt_l @met_;  '  \           kp4  kp5  kp6
+  lsft 102d z    x    c    v    b    n    m    ,    .    /    rsft            up         kp1  kp2  kp3  kprt
+  lctl lmet lalt           spc                 ralt rmet cmp  rctl       left down rght  kp0  kp.
+)
+
+
+(deflayer numbers
+  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _    _
+  _    _    _    _    _    _    XX   /    7    8    9    -    _    _     _    _    _    _    _    _    _
+  _    _    _    _    _    _    XX   *    4    5    6    +    _                         _    _    _
+  _    _    _    _    _    _    XX   0    1    2    3    _    _               _         _    _    _    _
+  _    _    _              _                   _    _    _    _          _    _    _    _    _
+)
+

@@ -36,9 +36,6 @@ in
   };
 
   
-  # I don't know if I need this or not
-  # boot.kernelModules = [ "fuse" ];
-
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
