@@ -274,7 +274,7 @@ If you call a file `default.nix`, you can access It just bu importing It's folde
 nix search nixpkgs <searchterm>
 ```
 
-# 🎥 Rerources
+# 🎥 Resources
 ## Videos
 https://www.youtube.com/watch?v=CwfKlX3rA6E
 
