@@ -79,7 +79,7 @@
 | Launchpad S  | App-launcher        |        |
 
 
-# My keyboard configuration
+# ⌨️  My keyboard configuration
 
 I use home row with the following settings
 ```
