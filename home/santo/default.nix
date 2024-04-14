@@ -48,6 +48,7 @@
     olive-editor        # new and promising video editor
     obs-studio          # recording
     gimp-with-plugins   # image editor
+    rawtherapee         # RAW image editor
 
     # Gaming
     steam
