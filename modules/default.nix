@@ -42,6 +42,7 @@
     telegram-desktop
     obsidian
     texstudio         # LaTeX editor
+    texlive.combined.scheme-full
 
     # Developement
     git
