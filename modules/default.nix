@@ -41,6 +41,7 @@
     discord
     telegram-desktop
     obsidian
+    texstudio         # LaTeX editor
 
     # Developement
     git
