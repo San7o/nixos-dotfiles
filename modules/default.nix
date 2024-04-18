@@ -43,6 +43,7 @@
     obsidian
     texstudio         # LaTeX editor
     texlive.combined.scheme-full
+    freecad           # 3D Modeling
 
     # Developement
     git
