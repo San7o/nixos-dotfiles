@@ -55,6 +55,7 @@
     zsh-syntax-highlighting
     nodejs_21         # Needed for copilot
     haskellPackages.kmonad            # Keyboard tweaker
+    ansible_2_14      # Automation tool
 
     # Utilities / Misc
     ranger            # Visual file manager
@@ -70,6 +71,7 @@
     brightnessctl     # manage brightness
     gnome.cheese      # webcam
     cowsay            # For fun
+    sshpass           # For ssh automation
 
     # Virtualisation
     docker
