@@ -82,6 +82,7 @@
     wget
     curl
     wireshark
+    qbittorrent       # Torrent client
 
     # Wayland specific
     waybar            # Simple bar, configured with json and css
