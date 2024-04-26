@@ -36,7 +36,6 @@
 
     # Applications
     firefox
-    vivaldi
     zoom-us
     discord
     telegram-desktop
@@ -72,6 +71,7 @@
     gnome.cheese      # webcam
     cowsay            # For fun
     sshpass           # For ssh automation
+    ledger            # Accounting tool 
 
     # Virtualisation
     docker
