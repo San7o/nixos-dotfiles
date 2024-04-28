@@ -43,6 +43,7 @@
     texstudio         # LaTeX editor
     texlive.combined.scheme-full
     freecad           # 3D Modeling
+    vlc               # Media player
 
     # Developement
     git
@@ -83,7 +84,8 @@
     curl
     wireshark
     qbittorrent       # Torrent client
-
+    samba             # File sharing
+    
     # Wayland specific
     waybar            # Simple bar, configured with json and css
     dunst             # Notification manager
