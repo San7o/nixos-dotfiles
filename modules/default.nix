@@ -56,6 +56,7 @@
     nodejs_21         # Needed for copilot
     haskellPackages.kmonad            # Keyboard tweaker
     ansible_2_14      # Automation tool
+    tig               # Git interface
 
     # Utilities / Misc
     ranger            # Visual file manager
