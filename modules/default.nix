@@ -57,6 +57,8 @@
     haskellPackages.kmonad            # Keyboard tweaker
     ansible_2_14      # Automation tool
     tig               # Git interface
+    ollama            # LLM tool
+    tmux              # Terminal multiplexer
 
     # Utilities / Misc
     ranger            # Visual file manager
@@ -74,6 +76,7 @@
     cowsay            # For fun
     sshpass           # For ssh automation
     ledger            # Accounting tool 
+    unrar             # Extract .rar files
 
     # Virtualisation
     docker
