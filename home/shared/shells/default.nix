@@ -6,5 +6,6 @@
     ./alacritty.nix
     ./kitty.nix
     ./zsh.nix
+    ./tmux.nix
   ];
 }
