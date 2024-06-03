@@ -14,6 +14,16 @@ let
     };
   };
 
+  obsidian-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "obsidian-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "epwalsh";
+      repo = "obsidian.nvim";
+      # git ls-remote https://github.com/epwalsh/obsidian.nvim.git
+      rev = "fda8df43ebb1f2694af4e3bb53dd2886b9f9c896";
+      sha256 = "rOEPJ0d2yKkS3Fnsd2tZ+V73y81VbPPTfv8Pw53LIfk=";
+    };
+  };
 in
 {
   programs.neovim = { 
@@ -28,7 +38,6 @@ in
     # https://github.com/NixNeovim/NixNeovimPlugins
     plugins = with pkgs.vimPlugins; [
       nvim-tree-lua         # Directory tree
-      vim-startify          # Fancy start screen
       nerdtree              # Another Directory tree
       surround-nvim         # Shortcut to surround a work with char
       syntastic             # Code syntax checking for a lot of languages
@@ -40,6 +49,9 @@ in
       nvim-colorizer-lua    # Show hex colors immediately
       gitsigns-nvim         # Hilight text changed from last commit
       copilot-vim           # Github's AI assistant
+      markdown-preview-nvim # Preview markdown files
+      alpha-nvim            # Fancy start screen
+      obsidian-nvim         # Obsidian integration in neovim
     ];
 
     extraConfig = ''
@@ -54,7 +66,7 @@ in
 
       nnoremap <C-Space> <cmd>NvimTreeToggle<cr>
 
-
+      set conceallevel=1
     '';
     
     # Add this to enamble ycm
@@ -63,6 +75,16 @@ in
     extraLuaConfig = ''
       require("gitsigns").setup()
       require("nvim-tree").setup()
+      require("alpha").setup(require("alpha.themes.dashboard").opts)
+      require("colorizer").setup()
+      require("obsidian").setup {
+          workspaces = {
+            {
+                name = "my-second-brain",
+                path = "~/Documents/ObsidianVault",
+            },
+          },  
+      }
     '';
   };
 
