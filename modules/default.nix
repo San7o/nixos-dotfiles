@@ -58,7 +58,6 @@
     ansible_2_14      # Automation tool
     tig               # Git interface
     ollama            # LLM tool
-    tmux              # Terminal multiplexer
 
     # Utilities / Misc
     ranger            # Visual file manager
