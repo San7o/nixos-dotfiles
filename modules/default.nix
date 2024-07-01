@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
 
+let
+  pkgs-unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in
 {
 
   imports = [
@@ -50,14 +53,20 @@
     ltrace            # debug programs
     strace            # debug programs
     python3
-    # Zsh
     zsh-autosuggestions
     zsh-syntax-highlighting
     nodejs_21         # Needed for copilot
-    haskellPackages.kmonad            # Keyboard tweaker
+    haskellPackages.kmonad # Keyboard tweaker
     ansible_2_14      # Automation tool
     tig               # Git interface
     ollama            # LLM tool
+    tmux              # Terminal multiplexer
+    pkgs-unstable.ollama-cuda  # Local LLM
+    direnv            # Environment variable manager
+    # many python packages need libc
+    zlib
+    libGL
+    glib
 
     # Utilities / Misc
     ranger            # Visual file manager

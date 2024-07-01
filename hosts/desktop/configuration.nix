@@ -35,6 +35,7 @@ in
     device = "/dev/nvme0n1";
   };
 
+  boot.supportedFilesystems = [ "ntfs" ];
   
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -240,5 +241,14 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
+
+
+
+  environment.systemPackages = with pkgs; [
+    # For LLMs
+    pkgs.cudaPackages.cudatoolkit
+    pkgs.cudaPackages.cudnn
+
+  ];
 
 }
