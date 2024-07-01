@@ -76,6 +76,8 @@
     sshpass           # For ssh automation
     ledger            # Accounting tool 
     unrar             # Extract .rar files
+    zotero            # Reference manager
+    inkscape          # Vector graphics editor
 
     # Virtualisation
     docker
@@ -88,6 +90,7 @@
     wireshark
     qbittorrent       # Torrent client
     samba             # File sharing
+    socat             # Multipurpose relay
     
     # Wayland specific
     waybar            # Simple bar, configured with json and css
@@ -127,5 +130,8 @@
   };
 
   boot.kernelModules = [ "uinput" ];
+
+  # Enable epmd for erlang
+  services.epmd.enable = true;
 
 }

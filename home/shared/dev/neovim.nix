@@ -52,6 +52,7 @@ in
       markdown-preview-nvim # Preview markdown files
       alpha-nvim            # Fancy start screen
       obsidian-nvim         # Obsidian integration in neovim
+      vim-elixir            # Elixir support
     ];
 
     extraConfig = ''
