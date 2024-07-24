@@ -124,6 +124,11 @@ in
 
   ];
 
+  # Virtualbox
+  users.extraGroups.vboxusers.members = [ "santo" ];
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.guest.enable = true;
+
   # Enable docker
   virtualisation.docker.enable = true;
 
