@@ -1,6 +1,7 @@
 {
   
   description = "NixOS configuration";
+  # From https://nixos-and-flakes.thiscute.world/nixos-with-flakes/start-using-home-manager
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";

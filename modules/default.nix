@@ -47,6 +47,8 @@ in
     texlive.combined.scheme-full
     freecad           # 3D Modeling
     vlc               # Media player
+    obs-studio        # Screen recording
+    blender           # 3D modeling
 
     # Developement
     git
@@ -59,14 +61,15 @@ in
     haskellPackages.kmonad # Keyboard tweaker
     ansible_2_14      # Automation tool
     tig               # Git interface
-    ollama            # LLM tool
     tmux              # Terminal multiplexer
-    pkgs-unstable.ollama-cuda  # Local LLM
+    # pkgs-unstable.ollama-cuda  # Local LLM
     direnv            # Environment variable manager
     # many python packages need libc
     zlib
     libGL
     glib
+    android-studio    # Android development
+    valgrind          # Memory leak detector
 
     # Utilities / Misc
     ranger            # Visual file manager
@@ -87,6 +90,7 @@ in
     unrar             # Extract .rar files
     zotero            # Reference manager
     inkscape          # Vector graphics editor
+    raven-reader      # RSS reader
 
     # Virtualisation
     docker

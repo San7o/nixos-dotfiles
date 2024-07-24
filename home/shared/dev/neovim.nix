@@ -53,6 +53,8 @@ in
       alpha-nvim            # Fancy start screen
       obsidian-nvim         # Obsidian integration in neovim
       vim-elixir            # Elixir support
+      html5-vim             # HTML5 support
+      emmet-vim             # Emmet support
     ];
 
     extraConfig = ''
