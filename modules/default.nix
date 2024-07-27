@@ -76,7 +76,7 @@ in
     zip
     unzip
     gnutar
-    neofetch          # ofc
+    fastfetch         # neofetch alternative
     ripgrep           # the cooler grep
     xfce.thunar       # file manager
     thunderbird       # popular mail client

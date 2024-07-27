@@ -61,6 +61,7 @@ in
       set expandtab
       set tabstop=4
       set rnu
+      set clipboard=unnamedplus
 
       nnoremap <leader>ff <cmd>Telescope find_files<cr>
       nnoremap <leader>fg <cmd>Telescope live_grep<cr>
