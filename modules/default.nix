@@ -49,6 +49,9 @@ in
     vlc               # Media player
     obs-studio        # Screen recording
     blender           # 3D modeling
+    gimp              # Image editor
+    kdenlive          # Video editor
+    audacity          # Audio editor
 
     # Developement
     git
@@ -91,6 +94,7 @@ in
     zotero            # Reference manager
     inkscape          # Vector graphics editor
     raven-reader      # RSS reader
+    linuxKernel.packages.linux_6_1.perf # profiler
 
     # Virtualisation
     docker
@@ -147,7 +151,7 @@ in
       daemon.enable = true;
   };
 
-  boot.kernelModules = [ "uinput" ];
+  boot.kernelModules = [ "uinput" "perf" ];
 
   # Enable epmd for erlang
   services.epmd.enable = true;
