@@ -26,7 +26,7 @@ let
   };
 in
 {
-  programs.neovim = { 
+  programs.neovim = {
 
     enable = true;
     defaultEditor = true;
@@ -37,24 +37,26 @@ in
     # https://github.com/m15a/nixpkgs-vim-extra-plugins
     # https://github.com/NixNeovim/NixNeovimPlugins
     plugins = with pkgs.vimPlugins; [
-      nvim-tree-lua         # Directory tree
-      nerdtree              # Another Directory tree
-      surround-nvim         # Shortcut to surround a work with char
-      syntastic             # Code syntax checking for a lot of languages
-      YouCompleteMe         # Code completition for most languages
-      vim-airline           # Bottom bar with some informations
-      emmet-vim             # Amazing html completition
-      telescope-zoxide      # Fuzzy finder
-      fine-cmdline          # Better looking command line
-      nvim-colorizer-lua    # Show hex colors immediately
-      gitsigns-nvim         # Hilight text changed from last commit
-      copilot-vim           # Github's AI assistant
+      nvim-tree-lua # Directory tree
+      nerdtree # Another Directory tree
+      surround-nvim # Shortcut to surround a work with char
+      syntastic # Code syntax checking for a lot of languages
+      YouCompleteMe # Code completition for most languages
+      vim-airline # Bottom bar with some informations
+      emmet-vim # Amazing html completition
+      telescope-zoxide # Fuzzy finder
+      fine-cmdline # Better looking command line
+      nvim-colorizer-lua # Show hex colors immediately
+      gitsigns-nvim # Hilight text changed from last commit
+      copilot-vim # Github's AI assistant
       markdown-preview-nvim # Preview markdown files
-      alpha-nvim            # Fancy start screen
-      obsidian-nvim         # Obsidian integration in neovim
-      vim-elixir            # Elixir support
-      html5-vim             # HTML5 support
-      emmet-vim             # Emmet support
+      alpha-nvim # Fancy start screen
+      obsidian-nvim # Obsidian integration in neovim
+      vim-elixir # Elixir support
+      html5-vim # HTML5 support
+      emmet-vim # Emmet support
+      vimtex # Latex live preview
+      vim-markdown # Markdown support
     ];
 
     extraConfig = ''
@@ -71,8 +73,11 @@ in
       nnoremap <C-Space> <cmd>NvimTreeToggle<cr>
 
       set conceallevel=1
+
+      let g:vimtex_view_method = 'zathura'
+      let g:vimtex_compiler_method = 'latexrun'
     '';
-    
+
     # Add this to enamble ycm
     # let g:ycm_show_diagnostics_ui = 0
 
@@ -95,10 +100,10 @@ in
 
   # YCM Settings for C/C++
   home.file.".ycm_extra_conf.py" = {
-    
-      # Overwrite the file
-      force = true;
-      text = ''
+
+    # Overwrite the file
+    force = true;
+    text = ''
 
    def Settings(**kwargs):
     return {
@@ -106,7 +111,7 @@ in
     }   
 
       '';
-    };
+  };
 
 
 }

@@ -6,7 +6,7 @@
     description = "santo";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-       # Define packages here
+      # Define packages here
     ];
   };
 
@@ -16,7 +16,7 @@
     description = "light-santo";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-       # Define packages here
+      # Define packages here
     ];
   };
 

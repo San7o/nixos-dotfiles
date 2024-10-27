@@ -6,9 +6,9 @@
   home.homeDirectory = "/home/santo";
 
   imports = [
-    ../shared       # Shared configs
-    ./programs      # Various applications
-    ./dev           # dev configs
+    ../shared # Shared configs
+    ./programs # Various applications
+    ./dev # dev configs
   ];
 
   # link all files in `./scripts` to `~/.config/i3/scripts`
@@ -34,21 +34,22 @@
   home.packages = with pkgs; [
 
     # System Administration
-    powertop      # see power statistics on intel-based laptops
-                  # run a calibration with "powertop --calibrate"
-		  # It will take 5-10 minutes
-		  # then let It run for an hour and get power
-		  # estimation figures
-    btop          # System monitor
-    ncdu          # Analyze disk usage 
+    powertop # see power statistics on intel-based laptops
+    # run a calibration with "powertop --calibrate"
+    # It will take 5-10 minutes
+    # then let It run for an hour and get power
+    # estimation figures
+    btop # System monitor
+    ncdu # Analyze disk usage 
 
     # Media editing
-    audacity            # audio
+    audacity # audio
     libsForQt5.kdenlive # video editor
-    olive-editor        # new and promising video editor
-    obs-studio          # recording
-    gimp-with-plugins   # image editor
-    rawtherapee         # RAW image editor
+    olive-editor # new and promising video editor
+    obs-studio # recording
+    gimp-with-plugins # image editor
+    rawtherapee # RAW image editor
+    kdenlive # video editor
 
     # Gaming
     steam
@@ -58,9 +59,9 @@
     osu-lazer
 
     # Graphics
-    mesa-demos          # opengl and lots of tests
+    mesa-demos # opengl and lots of tests
 
- ];
+  ];
 
   # Allow unfree software
   nixpkgs.config.allowUnfree = true;

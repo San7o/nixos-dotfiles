@@ -3,7 +3,7 @@
 {
 
   home.file.".config/rofi/rofi.conf" = {
-    
+
     # Overwrite the file
     force = true;
 

@@ -6,8 +6,8 @@
   home.homeDirectory = "/home/lanto";
 
   imports = [
-    ../shared       # Shared configs
-    ./dev           # dev configs
+    ../shared # Shared configs
+    ./dev # dev configs
   ];
 
   # link all files in `./scripts` to `~/.config/i3/scripts`
@@ -31,11 +31,10 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-       # Lanto is gonna be a very light user 
-       # With only the necessary programs he needs
-       cura # TODO remove
- ];
-  
+    # Lanto is gonna be a very light user 
+    # With only the necessary programs he needs
+  ];
+
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards

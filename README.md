@@ -300,6 +300,12 @@ If you call a file `default.nix`, you can access It just bu importing It's folde
 nix search nixpkgs <searchterm>
 ```
 
+## Format
+
+```bash
+nixpkgs-fmt .config/nixos
+```
+
 # 🎥 Resources
 ## Videos
 https://www.youtube.com/watch?v=CwfKlX3rA6E

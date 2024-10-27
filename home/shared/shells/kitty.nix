@@ -5,7 +5,7 @@
   # From the initial i3 config
 
   home.file.".config/kitty/kitty.conf" = {
-    
+
     # Overwrite the file
     force = true;
     text = ''

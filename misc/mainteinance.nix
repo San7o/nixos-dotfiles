@@ -1,4 +1,4 @@
-{ config, pkgs, inputs,  ... }:
+{ config, pkgs, inputs, ... }:
 
 {
 
@@ -21,7 +21,7 @@
   };
   nix.optimise = {
     automatic = true;
-    dates = [ "05:00" ]; 
+    dates = [ "05:00" ];
   };
 
 

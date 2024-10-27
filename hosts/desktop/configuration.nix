@@ -20,7 +20,7 @@ let
 
 in
 {
-  
+
   # --------------------------- Set-up the system -------------------------- #
 
 
@@ -36,7 +36,7 @@ in
   };
 
   boot.supportedFilesystems = [ "ntfs" ];
-  
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -74,15 +74,15 @@ in
   # ------------------------- DESKTOP ENVIRONMENT ------------------------- #
 
   # Enable the X11 windowing system.
- /*
-  services.xserver.enable = true;
+  /*
+    services.xserver.enable = true;
 
-  # Configure keymap in X11
-  services.xserver = {
+    # Configure keymap in X11
+    services.xserver = {
     layout = "it";
     xkbVariant = "";
-  };
-*/
+    };
+  */
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -112,7 +112,7 @@ in
 
   # Enable i3
   /*
-  services.xserver = {
+    services.xserver = {
     enable = true;
 
     desktopManager = {
@@ -128,24 +128,24 @@ in
       extraPackages = with pkgs; [
         # dmenu        # application launcher most people use
         rofi           # alternative to dmenu
-	i3status       # gives you the default i3 status bar
+     	i3status       # gives you the default i3 status bar
         i3lock         # default i3 screen locker
         i3blocks       # if you are planning on using i3blocks over i3status
      ];
 
     };
-  };
+    };
   */
 
 
   # Enable hyperland
   # First you can enable the cache server so that you don't have to compile the source again
   nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
- 
- programs.hyprland = {
+
+  programs.hyprland = {
     # Install the packages from nixpkgs
     enable = true;
     # Whether to enable XWayland, a compatibility layer over wayland for apps that don't supìport wayland yet
@@ -158,7 +158,7 @@ in
   # Display Manager ----------
   # Enable Greetd
   /*
-  services.greetd = {
+    services.greetd = {
     enable = true;
     settings = rec {
       initial_session = {
@@ -166,7 +166,7 @@ in
       };
       default_session = initial_session;
     };
-  };
+    };
   */
 
   # Enable sddm for wayland

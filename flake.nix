@@ -1,5 +1,5 @@
 {
-  
+
   description = "NixOS configuration";
   # From https://nixos-and-flakes.thiscute.world/nixos-with-flakes/start-using-home-manager
 
@@ -25,7 +25,7 @@
         system = "x86_64-linux";
         modules = [
 
-	  # System and Hardware configuration
+          # System and Hardware configuration
           ./hosts/acer-laptop
           ./modules
 
@@ -38,7 +38,7 @@
 
             # Set home-manager for the user santo
             home-manager.users.santo = import ./home/santo;
-            
+
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
 
@@ -48,7 +48,7 @@
         system = "x86_64-linux";
         modules = [
 
-	  # System and Hardware configuration
+          # System and Hardware configuration
           ./hosts/desktop
           ./modules
           # Nvidia drives
@@ -63,23 +63,23 @@
 
             # Set home-manager for the user santo
             home-manager.users.santo = import ./home/santo;
-            
+
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
 
         ];
       };
- 
+
       # Your hostname
       "lanto@hp" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
 
-	  # System and Hardware Configuration
+          # System and Hardware Configuration
           ./hosts/hp-laptop
           ./modules
-          
-	  home-manager.nixosModules.home-manager
+
+          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -99,20 +99,20 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager <command> --flake .#username@hostname'
     homeConfigurations = {
-        "santo@home" =
-            home-manager.lib.homeManagerConfiguration {
-              pkgs = nixpkgs.legacyPackages."x86_64-linux";
-              modules = [ ./home/santo ];
-            };
-      };
+      "santo@home" =
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          modules = [ ./home/santo ];
+        };
+    };
 
     homeConfigurations = {
-        "lanto@home" =
-            home-manager.lib.homeManagerConfiguration {
-              pkgs = nixpkgs.legacyPackages."x86_64-linux";
-              modules = [ ./home/lanto ];
-            };
-      };
+      "lanto@home" =
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          modules = [ ./home/lanto ];
+        };
+    };
 
 
   };

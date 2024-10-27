@@ -29,102 +29,106 @@ in
   # To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     
+
     # nix related
     #
     # it provides the command `nom` works just like `nix`
     # with more details log output
     nix-output-monitor
     home-manager
+    nixpkgs-fmt # Nix formatter
+    nixd # Nix language server
 
     # Applications
     firefox
-    zoom-us
+    # zoom-us
     discord
     telegram-desktop
     obsidian
-    texstudio         # LaTeX editor
+    # texstudio # LaTeX editor
     texlive.combined.scheme-full
-    freecad           # 3D Modeling
-    vlc               # Media player
-    obs-studio        # Screen recording
-    blender           # 3D modeling
-    gimp              # Image editor
-    kdenlive          # Video editor
-    audacity          # Audio editor
+    # freecad # 3D Modeling
+    vlc # Media player
+    # obs-studio # Screen recording
+    # blender # 3D modeling
+    # gimp # Image editor
+    # kdenlive # Video editor
+    # audacity # Audio editor
+    # cura # 3D printing
 
     # Developement
     git
-    ltrace            # debug programs
-    strace            # debug programs
+    ltrace # debug programs
+    strace # debug programs
     python3
     zsh-autosuggestions
     zsh-syntax-highlighting
-    nodejs_21         # Needed for copilot
+    nodejs_21 # Needed for copilot
     haskellPackages.kmonad # Keyboard tweaker
-    ansible_2_14      # Automation tool
-    tig               # Git interface
-    tmux              # Terminal multiplexer
+    # ansible_2_14 # Automation tool
+    tig # Git interface
+    tmux # Terminal multiplexer
     # pkgs-unstable.ollama-cuda  # Local LLM
-    direnv            # Environment variable manager
+    direnv # Environment variable manager
     # many python packages need libc
     zlib
     libGL
     glib
-    android-studio    # Android development
-    valgrind          # Memory leak detector
+    # android-studio # Android development
+    # valgrind # Memory leak detector
 
     # Utilities / Misc
-    ranger            # Visual file manager
+    ranger # Visual file manager
     zip
     unzip
     gnutar
-    fastfetch         # neofetch alternative
-    ripgrep           # the cooler grep
-    xfce.thunar       # file manager
-    thunderbird       # popular mail client
+    fastfetch # neofetch alternative
+    ripgrep # the cooler grep
+    xfce.thunar # file manager
+    thunderbird # popular mail client
     # feh             # to set background
-    tree              # list files and folder in a tree structure
-    brightnessctl     # manage brightness
-    gnome.cheese      # webcam
-    cowsay            # For fun
-    sshpass           # For ssh automation
-    ledger            # Accounting tool 
-    unrar             # Extract .rar files
-    zotero            # Reference manager
-    inkscape          # Vector graphics editor
-    raven-reader      # RSS reader
+    tree # list files and folder in a tree structure
+    brightnessctl # manage brightness
+    gnome.cheese # webcam
+    cowsay # For fun
+    sshpass # For ssh automation
+    # ledger # Accounting tool 
+    unrar # Extract .rar files
+    zotero # Reference manager
+    # inkscape # Vector graphics editor
+    raven-reader # RSS reader
     linuxKernel.packages.linux_6_1.perf # profiler
+    zathura # PDF reader
 
     # Virtualisation
     docker
     docker-compose
     qemu
- 
+
     # Networking
     wget
     curl
-    wireshark
-    qbittorrent       # Torrent client
-    samba             # File sharing
-    socat             # Multipurpose relay
-    
+    # wireshark
+    # qbittorrent # Torrent client
+    # samba # File sharing
+    # socat # Multipurpose relay
+
     # Wayland specific
-    waybar            # Simple bar, configured with json and css
-    dunst             # Notification manager
-    libnotify         # Dependency of dunst
-    rofi-wayland      # Wailand compatible rofi
-    rofi-power-menu   # Rofi but for power menu
-    grim              # Take screenshot
-    slurp             # Select a region
-    wl-clipboard      # Save on clipboard from terminal
-    kitty             # Wayland terminal 
-    hyprpaper         # wallpaper engine for hyprland
-    wl-gammactl       # anage screen gamma and contrast
-    greetd.wlgreet    # display / login manager
+    waybar # Simple bar, configured with json and css
+    dunst # Notification manager
+    libnotify # Dependency of dunst
+    rofi-wayland # Wailand compatible rofi
+    rofi-power-menu # Rofi but for power menu
+    grim # Take screenshot
+    slurp # Select a region
+    wl-clipboard # Save on clipboard from terminal
+    kitty # Wayland terminal 
+    hyprpaper # wallpaper engine for hyprland
+    wl-gammactl # anage screen gamma and contrast
+    greetd.wlgreet # display / login manager
 
     # Visual
-    cava              # Music Visualizer
+    # cava # Music Visualizer
 
   ];
 
@@ -147,8 +151,8 @@ in
 
   # Open Tablet Driver
   hardware.opentabletdriver = {
-      enable = true;
-      daemon.enable = true;
+    enable = true;
+    daemon.enable = true;
   };
 
   boot.kernelModules = [ "uinput" "perf" ];

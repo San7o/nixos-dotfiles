@@ -1,10 +1,10 @@
 { pkgs, config, ... }:
 {
   imports = [
-      # ./i3.nix
-      ./rofi.nix        # rofi configuration
-      ./waybar.nix      # waibar configs
-      ./neofetch.nix    # neofetch theme
+    # ./i3.nix
+    ./rofi.nix # rofi configuration
+    ./waybar.nix # waibar configs
+    ./neofetch.nix # neofetch theme
   ];
 
   # Set hyprland config file
@@ -16,7 +16,7 @@
 
   # Set hyprpaper config file
   home.file.".config/hypr/hyprpaper.conf" = {
-    
+
     # Overwrite the file
     force = true;
     text = builtins.readFile ./hyprpaper.conf;
