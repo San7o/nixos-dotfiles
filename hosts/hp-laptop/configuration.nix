@@ -68,17 +68,17 @@ in
   # ------------------------- DESKTOP ENVIRONMENT ------------------------- #
 
   # Enable the X11 windowing system.
-  /*
-    services.xserver.enable = true;
-
-    # Configure keymap in X11
-    services.xserver = {
+  services.xserver = {
+    enable = true;
     layout = "it";
     xkbVariant = "";
-    };
-  */
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+    autorun = false;
+    displayManager.startx.enable = true;
+    # Enable touchpad support (enabled default in most desktopManager).
+    libinput.enable = true;
+    # services.xserver.lightdm.enable = lib.mkForce false;
+    
+  };
 
 
   # Enable the GNOME Desktop Environment.

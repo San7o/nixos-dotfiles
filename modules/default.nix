@@ -125,7 +125,7 @@ in
     kitty # Wayland terminal 
     hyprpaper # wallpaper engine for hyprland
     wl-gammactl # anage screen gamma and contrast
-    greetd.wlgreet # display / login manager
+    # greetd.wlgreet # display / login manager
 
     # Visual
     # cava # Music Visualizer
