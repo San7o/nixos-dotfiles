@@ -127,6 +127,10 @@ in
     wl-gammactl # anage screen gamma and contrast
     # greetd.wlgreet # display / login manager
 
+    # x
+    xorg.xwd # Take screenshot
+    xclip # Save on clipboard from terminal
+
     # Visual
     # cava # Music Visualizer
 

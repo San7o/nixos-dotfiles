@@ -23,7 +23,6 @@
   (cons input (apply-partially #'orderless--highlight input t)))
 (setq affe-regexp-compiler #'affe-orderless-regexp-compiler)
 
-
 ;; Customization
 (global-display-line-numbers-mode)
 (setq display-line-numbers 'relative)

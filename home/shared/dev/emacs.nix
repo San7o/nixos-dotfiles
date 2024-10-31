@@ -16,6 +16,10 @@ in
     git
     magit # git tool
     evil-collection # vim key bindings
+    lsp-mode
+    consult
+    affe
+    orderless
   ])
   ++ (with epkgs.elpaPackages; [
     auctex         # ; LaTeX mode
